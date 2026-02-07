@@ -1,4 +1,52 @@
+"use client";
+
+import { useState } from "react";
+
+function generateId(name: string, phone: string): string {
+  const input = `${name}:${phone}`;
+  let hash = 0;
+  for (let i = 0; i < input.length; i++) {
+    const char = input.charCodeAt(i);
+    hash = ((hash << 5) - hash + char) | 0;
+  }
+  return Math.abs(hash).toString(36);
+}
+
 export default function CTAForm() {
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    referrer: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+
+  const handleChange = (field: string) => (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData((prev) => ({ ...prev, [field]: e.target.value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formData.name || !formData.phone || !formData.email) return;
+
+    setIsSubmitting(true);
+    setSubmitStatus("idle");
+    try {
+      const id = generateId(formData.name, formData.phone);
+      const timestamp = new Date().toISOString();
+      await fetch("https://hooks.zapier.com/hooks/catch/14332708/ug158id/", {
+        method: "POST",
+        body: JSON.stringify({ ...formData, id, timestamp }),
+      });
+      setSubmitStatus("success");
+    } catch {
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section id="cta-form" className="px-6 md:px-8 lg:px-16 pt-24 md:pt-32 lg:pt-40 pb-20 md:pb-28 lg:pb-32 flex flex-col items-center">
       <div className="max-w-[770px] mx-auto text-center mb-10 md:mb-14">
@@ -23,21 +71,30 @@ export default function CTAForm() {
           인비테이션 코스 신청하기
         </h3>
 
-        <form className="flex flex-col gap-6">
-          <FormField label="이름" placeholder="김한국" />
+        <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+          <FormField label="이름" name="name" placeholder="김한국" value={formData.name} onChange={handleChange("name")} />
           <FormField
             label="연락처 (자료 발송 및 안내용)"
+            name="phone"
             placeholder="(하이픈 없이 숫자만 입력)"
             type="tel"
+            value={formData.phone}
+            onChange={handleChange("phone")}
           />
           <FormField
             label="이메일 (상세 안내 수신용)"
+            name="email"
             type="email"
+            value={formData.email}
+            onChange={handleChange("email")}
           />
           <div>
             <FormField
               label="추천해주신 분의 이름(선택)"
+              name="referrer"
               placeholder="홍길동"
+              value={formData.referrer}
+              onChange={handleChange("referrer")}
             />
             <p className="flex items-center gap-1 mt-1.5 text-[12px] md:text-[13px] text-grey-light-8">
               <span className="text-grey-light-8">ⓘ</span>
@@ -48,10 +105,22 @@ export default function CTAForm() {
 
           <button
             type="submit"
-            className="mx-auto bg-chalk text-black rounded-full px-5 py-2.5 font-medium text-[15px] md:text-[16px] mt-2 hover:bg-white transition-colors cursor-pointer"
+            disabled={isSubmitting}
+            className="mx-auto bg-chalk text-black rounded-full px-5 py-2.5 font-medium text-[15px] md:text-[16px] mt-2 hover:bg-white transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            인비테이션 코스(무료) 시작하기
+            {isSubmitting ? "전송 중..." : "인비테이션 코스(무료) 시작하기"}
           </button>
+
+          {submitStatus === "success" && (
+            <p className="text-center text-green-400 text-[14px] mt-2">
+              신청이 완료되었습니다.
+            </p>
+          )}
+          {submitStatus === "error" && (
+            <p className="text-center text-red-400 text-[14px] mt-2">
+              전송에 실패했습니다. 다시 시도해 주세요.
+            </p>
+          )}
         </form>
       </div>
     </section>
@@ -60,21 +129,31 @@ export default function CTAForm() {
 
 function FormField({
   label,
+  name,
   placeholder,
   type = "text",
+  value,
+  onChange,
 }: {
   label: string;
+  name: string;
   placeholder?: string;
   type?: string;
+  value: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }) {
   return (
     <div className="flex flex-col gap-1.5">
-      <label className="font-medium text-[13px] md:text-[14px] text-grey-light-9">
+      <label htmlFor={name} className="font-medium text-[13px] md:text-[14px] text-grey-light-9">
         {label}
       </label>
       <input
+        id={name}
+        name={name}
         type={type}
         placeholder={placeholder}
+        value={value}
+        onChange={onChange}
         className="bg-grey-dark rounded-xl px-3 py-2 text-[15px] md:text-[16px] text-white placeholder:text-chalk/30 outline-none border border-transparent focus:border-grey-border transition-colors"
       />
     </div>
