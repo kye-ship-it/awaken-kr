@@ -1,26 +1,42 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: #000000;
+  --color-foreground: #ffffff;
+  --color-gold: #c9bd8a;
+  --color-gold-light: #e5dcb4;
+  --color-gold-cream: #eeece0;
+  --color-gold-warm: #fff4c6;
+  --color-gold-pale: #fffcee;
+  --color-gold-deep: #fff8da;
+  --color-grey-7: #121212;
+  --color-grey-52: #858585;
+  --color-grey-mid: #868686;
+  --color-grey-light-8: #7f7f7f;
+  --color-grey-light-9: #a0a0a0;
+  --color-grey-dark: #1c1c1c;
+  --color-grey-border: rgba(255, 255, 255, 0.16);
+  --color-chalk: #e2e2e2;
+  --font-pretendard: "Pretendard Variable", Pretendard, -apple-system,
+    BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
+    "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  --font-dm-serif: var(--font-dm-serif);
+  --font-dm-mono: var(--font-dm-mono);
+  --font-prata: var(--font-prata);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    background: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-pretendard);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
-}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  html {
+    scroll-behavior: smooth;
+    background: #000;
+  }
 }
