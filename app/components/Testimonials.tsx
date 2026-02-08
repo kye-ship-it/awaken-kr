@@ -47,6 +47,17 @@ export default function Testimonials() {
           </div>
         ))}
       </div>
+
+      {/* Awaken Introduction Video */}
+      <div className="mt-12 md:mt-16 max-w-[800px] mx-auto w-full">
+        <iframe
+          className="w-full aspect-video rounded-xl"
+          src="https://www.youtube.com/embed/xxABMhtoBUI"
+          title="Awaken 소개 영상"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        />
+      </div>
     </section>
   );
 }

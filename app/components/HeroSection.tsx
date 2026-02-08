@@ -74,6 +74,29 @@ export default function HeroSection() {
             인비테이션 코스(무료) 시작하기
           </a>
 
+          {/* Event Info */}
+          <div className="mt-6 md:mt-8 flex flex-col items-center gap-2 text-[14px] md:text-[15px] text-white/70">
+            <p className="flex items-center gap-2">
+              <span className="text-gold-warm">&#128197;</span>
+              <span>2026년 03월 19일 (목) ~ 3월 22일 (일)</span>
+            </p>
+            <p className="flex items-center gap-2">
+              <span className="text-gold-warm">&#128205;</span>
+              <span>모드라운지 신논현점</span>
+            </p>
+            <p className="flex items-center gap-2">
+              <span className="text-gold-warm">&#128279;</span>
+              <a
+                href="https://naver.me/52RwPYSD"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-2 decoration-white/30 hover:text-white transition-colors"
+              >
+                서울 강남구 강남대로114길 13 지하1층
+              </a>
+            </p>
+          </div>
+
           {/* Scroll Hint */}
           <p className="mt-10 md:mt-16 text-[13px] md:text-[14px] text-[#9b9b9b]">
             스크롤하여 더 알아보기 ↓

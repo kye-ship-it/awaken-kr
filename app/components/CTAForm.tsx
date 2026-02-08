@@ -76,7 +76,7 @@ export default function CTAForm() {
           <FormField
             label="연락처 (자료 발송 및 안내용)"
             name="phone"
-            placeholder="(하이픈 없이 숫자만 입력)"
+            placeholder="01012345678"
             type="tel"
             value={formData.phone}
             onChange={handleChange("phone")}
