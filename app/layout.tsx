@@ -33,6 +33,14 @@ export const metadata: Metadata = {
       "말로는 다 설명되지 않는 4일간의 경험, 도대체 무엇이 사람을 변화시키는지 궁금하다면.",
     locale: "ko_KR",
     type: "website",
+    images: [
+      {
+        url: "/images/awaken-kr-og.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Awaken 어웨이큰",
+      },
+    ],
   },
 };
 
