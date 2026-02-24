@@ -54,11 +54,11 @@ export default function CTAForm() {
           궁금함은 있지만, 아직 확신이 없다면
         </p>
         <h2 className="text-[28px] md:text-[32px] lg:text-[36px] text-white leading-tight mb-4 md:mb-5">
-          &lsquo;<span className="font-semibold">인비테이션 코스</span>&rsquo;를
+          &lsquo;<span className="font-semibold">안내 코스</span>&rsquo;를
           먼저 받아보세요.
         </h2>
         <p className="text-[17px] md:text-[19px] lg:text-[21px] font-semibold text-gold-light mb-4 md:mb-5">
-          프라이빗한 인비테이션 코스를 통해 &lsquo;Awaken&rsquo;의 제한된
+          프라이빗한 안내 코스를 통해 &lsquo;Awaken&rsquo;의 제한된
           좌석에 당신을 정중히 초대합니다.
         </p>
         <p className="text-[14px] md:text-[15px] lg:text-[17px] text-white/50 leading-relaxed whitespace-pre-line">
@@ -68,7 +68,7 @@ export default function CTAForm() {
 
       <div className="max-w-[646px] mx-auto bg-[#0e0e0e] border border-grey-border rounded-2xl p-6 md:p-8 lg:p-10">
         <h3 className="text-[21px] md:text-[23px] lg:text-[25px] font-semibold text-white text-center mb-6 md:mb-8">
-          인비테이션 코스 신청하기
+          안내 코스 신청하기
         </h3>
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-6">
@@ -108,7 +108,7 @@ export default function CTAForm() {
             disabled={isSubmitting}
             className="mx-auto bg-chalk text-black rounded-full px-5 py-2.5 font-medium text-[15px] md:text-[16px] mt-2 hover:bg-white transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            {isSubmitting ? "전송 중..." : "인비테이션 코스(무료) 시작하기"}
+            {isSubmitting ? "전송 중..." : "안내 코스(무료) 시작하기"}
           </button>
 
           {submitStatus === "success" && (

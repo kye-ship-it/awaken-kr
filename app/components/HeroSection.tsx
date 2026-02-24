@@ -71,7 +71,7 @@ export default function HeroSection() {
 
           {/* CTA Button */}
           <a href="#cta-form" className="mt-4 md:mt-8 rounded-full bg-chalk px-8 py-3 text-[15px] md:text-[16px] font-medium text-black tracking-[-0.3px] transition-opacity hover:opacity-90 active:opacity-80">
-            인비테이션 코스(무료) 시작하기
+            안내 코스(무료) 시작하기
           </a>
 
           {/* Event Info */}

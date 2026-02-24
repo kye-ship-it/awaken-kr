@@ -30,7 +30,7 @@ const timelineItems = [
     emoji: "🗣️",
     title: "The Real Voice",
     description:
-      "\u2018저도 의심했습니다.\u2019 료생들이 털어놓는 가감 없는 인터뷰",
+      "\u2018저도 의심했습니다.\u2019 수료생들이 털어놓는 가감 없는 인터뷰",
   },
   {
     day: "D+9",
@@ -60,7 +60,7 @@ export default function InvitationTimeline() {
             당신의 속도에 맞춰 도착하는
             <br />
             <span className="font-semibold">
-              &lsquo;인비테이션 코스&rsquo;
+              &lsquo;안내 코스&rsquo;
             </span>
             입니다.
           </h2>
