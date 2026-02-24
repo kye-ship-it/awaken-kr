@@ -66,7 +66,7 @@ export default function HeroSection() {
               직접 경험하기 전에는 알 수 없는 것들이 있습니다.
             </p>
             <p className="text-[15px] md:text-[17px] font-normal leading-[1.4] text-white/95 tracking-[-0.5px]">
-              먼저, 이 프로그램이 당신에게 필요한지
+              먼저, 이 프로그램이 당신에게 필요한지{" "}
               <br className="md:hidden" />
               &lsquo;확인&rsquo;부터 해보세요.
             </p>
