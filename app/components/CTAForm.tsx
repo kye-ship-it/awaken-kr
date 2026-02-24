@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 function generateId(name: string, phone: string): string {
   const input = `${name}:${phone}`;
@@ -13,6 +14,7 @@ function generateId(name: string, phone: string): string {
 }
 
 export default function CTAForm() {
+  const router = useRouter();
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -39,7 +41,7 @@ export default function CTAForm() {
         method: "POST",
         body: JSON.stringify({ ...formData, id, timestamp }),
       });
-      setSubmitStatus("success");
+      router.push("/thank-you");
     } catch {
       setSubmitStatus("error");
     } finally {
@@ -111,11 +113,6 @@ export default function CTAForm() {
             {isSubmitting ? "전송 중..." : "안내 코스(무료) 시작하기"}
           </button>
 
-          {submitStatus === "success" && (
-            <p className="text-center text-green-400 text-[14px] mt-2">
-              신청이 완료되었습니다.
-            </p>
-          )}
           {submitStatus === "error" && (
             <p className="text-center text-red-400 text-[14px] mt-2">
               전송에 실패했습니다. 다시 시도해 주세요.
