@@ -37,14 +37,14 @@ export default function HeroSection() {
           </span>
 
           {/* Main Title - Mobile: 293px/393px centered */}
-          <h1 className="text-[28px] md:text-[38px] lg:text-[46px] font-bold leading-[1.2] tracking-[-1.4px] text-gold-pale break-keep">
+          <h1 className="text-[28px] md:text-[36px] lg:text-[44px] font-bold leading-[1.2] tracking-[-1.4px] text-gold-pale break-keep">
             Disney, Microsoft 리더들이 선택한 코칭이
             <br />
             서울에서 4일간 열립니다.
           </h1>
 
           {/* Subtitle */}
-          <p className="text-[18px] md:text-[22px] lg:text-[27.5px] font-semibold leading-[1.2] text-gold-warm tracking-[-0.55px]">
+          <p className="text-[16px] md:text-[22px] lg:text-[27.5px] font-semibold leading-[1.2] text-gold-warm tracking-[-0.55px]">
             말로는 다 설명되지 않는 4일간의 경험
             <br />
             도대체 무엇이 사람을 변화시키는지 궁금하다면,
