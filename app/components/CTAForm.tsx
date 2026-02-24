@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+
 
 function generateId(name: string, phone: string): string {
   const input = `${name}:${phone}`;
@@ -14,7 +14,6 @@ function generateId(name: string, phone: string): string {
 }
 
 export default function CTAForm() {
-  const router = useRouter();
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -41,7 +40,7 @@ export default function CTAForm() {
         method: "POST",
         body: JSON.stringify({ ...formData, id, timestamp }),
       });
-      router.push("/thank-you");
+      window.location.href = "/thank-you";
     } catch {
       setSubmitStatus("error");
     } finally {
