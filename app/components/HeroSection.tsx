@@ -43,9 +43,9 @@ export default function HeroSection() {
 
           {/* Subtitle */}
           <p className="text-[18px] md:text-[22px] lg:text-[27.5px] font-semibold leading-[1.2] text-gold-warm tracking-[-0.55px]">
-            말로는 다 설명되지 않는 4일간의 경험,
+            말로는 다 설명되지 않는 4일간의 경험
             <br />
-            도대체 무엇이 사람을 변화시키는지 궁금하다면
+            도대체 무엇이 사람을 변화시키는지 궁금하다면,
           </p>
 
           {/* Body Paragraphs */}
@@ -78,7 +78,7 @@ export default function HeroSection() {
           <div className="mt-6 md:mt-8 flex flex-col items-center gap-2 text-[14px] md:text-[15px] text-white/70">
             <p className="flex items-center gap-2">
               <span className="text-gold-warm">&#128197;</span>
-              <span>2026년 03월 19일 (목) ~ 3월 22일 (일)</span>
+              <span>2026년 3월 19일(목) ~ 3월 22일(일)</span>
             </p>
             <p className="flex items-center gap-2">
               <span className="text-gold-warm">&#128205;</span>
