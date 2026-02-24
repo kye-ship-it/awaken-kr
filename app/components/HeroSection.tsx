@@ -56,13 +56,13 @@ export default function HeroSection() {
               어웨이큰(Awaken)은 단순한 세미나가 아닙니다.
             </p>
             <p className="text-[15px] md:text-[17px] font-normal leading-[1.4] text-white/95 tracking-[-0.5px]">
-              4일간 깊이 몰입하는 이 프로그램이 정확히 무엇인지,
+              4일간 깊이 몰입하는 이 프로그램이 정확히 무엇인지,{" "}
               <br className="hidden md:block" />
               나에게 왜 필요한지 &mdash; 아직 확신이 서지 않으실 겁니다.
             </p>
             <p className="text-[15px] md:text-[17px] font-normal leading-[1.4] text-white/95 tracking-[-0.5px]">
               당연합니다. 보이지 않는 마음을 다루는 일이기에
-              <br className="hidden md:block" />
+              <br />
               직접 경험하기 전에는 알 수 없는 것들이 있습니다.
             </p>
             <p className="text-[15px] md:text-[17px] font-normal leading-[1.4] text-white/95 tracking-[-0.5px]">
