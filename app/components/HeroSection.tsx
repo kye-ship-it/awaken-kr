@@ -37,10 +37,8 @@ export default function HeroSection() {
           </span>
 
           {/* Main Title - Mobile: 293px/393px centered */}
-          <h1 className="text-[28px] md:text-[38px] lg:text-[46px] font-bold leading-[1.2] tracking-[-1.4px] text-gold-pale">
-            Disney, Microsoft 리더들이
-            <br className="md:hidden" />
-            {" "}선택한 코칭이
+          <h1 className="text-[28px] md:text-[38px] lg:text-[46px] font-bold leading-[1.2] tracking-[-1.4px] text-gold-pale break-keep">
+            Disney, Microsoft 리더들이 선택한 코칭이
             <br />
             서울에서 4일간 열립니다.
           </h1>
