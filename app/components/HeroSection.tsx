@@ -30,7 +30,7 @@ export default function HeroSection() {
 
       {/* Hero Content - Mobile: px=27~57, Desktop: centered */}
       <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-7 md:px-10 lg:px-16 py-12 md:py-16 text-center">
-        <div className="flex flex-col items-center gap-5 md:gap-7 max-w-[720px] mx-auto w-full">
+        <div className="flex flex-col items-center gap-5 md:gap-7 max-w-[720px] lg:max-w-[900px] mx-auto w-full">
           {/* Badge */}
           <span className="inline-flex items-center justify-center rounded-full border border-white bg-chalk px-5 py-1.5 text-[11px] md:text-[12.7px] font-medium text-black tracking-[-0.3px]">
             Vol.3 • 2026년 3월 • 서울
