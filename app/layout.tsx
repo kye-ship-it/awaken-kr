@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { DM_Serif_Text, DM_Mono, Prata } from "next/font/google";
-import FacebookPixel from "./components/FacebookPixel";
 import "./globals.css";
 
 const dmSerifText = DM_Serif_Text({
@@ -59,6 +59,29 @@ export default function RootLayout({
           crossOrigin="anonymous"
           href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
         />
+      </head>
+      <body
+        className={`${dmSerifText.variable} ${dmMono.variable} ${prata.variable} antialiased`}
+      >
+        {children}
+        <Script
+          id="facebook-pixel"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              !function(f,b,e,v,n,t,s)
+              {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+              n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+              if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+              n.queue=[];t=b.createElement(e);t.async=!0;
+              t.src=v;s=b.getElementsByTagName(e)[0];
+              s.parentNode.insertBefore(t,s)}(window, document,'script',
+              'https://connect.facebook.net/en_US/fbevents.js');
+              fbq('init', '1991556054974792');
+              fbq('track', 'PageView');
+            `,
+          }}
+        />
         <noscript>
           <img
             height="1"
@@ -68,12 +91,6 @@ export default function RootLayout({
             alt=""
           />
         </noscript>
-      </head>
-      <body
-        className={`${dmSerifText.variable} ${dmMono.variable} ${prata.variable} antialiased`}
-      >
-        {children}
-        <FacebookPixel />
       </body>
     </html>
   );
