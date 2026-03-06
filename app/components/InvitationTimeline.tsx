@@ -3,7 +3,7 @@ const timelineItems = [
     day: "즉시 도착",
     emoji: "📩",
     title: "The Welcome",
-    description: "어웨이큰으로의 초대, 그리고 지인 추천 혜택(코드) 안내",
+    description: "어웨이큰으로의 초대",
   },
   {
     day: "D+1",
