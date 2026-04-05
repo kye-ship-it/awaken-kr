@@ -24,7 +24,7 @@ export default function HeroSection() {
       {/* Navbar - Figma: height 80px, px=20 */}
       <nav className="sticky top-0 z-50 bg-black/60 backdrop-blur-md h-[80px] flex items-center px-5">
         <span className="font-[family-name:var(--font-dm-serif)] text-[28px] md:text-[36px] lg:text-[40px] text-white tracking-[-2px]">
-          Awaken
+          GAP Korea
         </span>
       </nav>
 
@@ -33,75 +33,44 @@ export default function HeroSection() {
         <div className="flex flex-col items-center gap-5 md:gap-7 max-w-[720px] lg:max-w-[900px] mx-auto w-full">
           {/* Badge */}
           <span className="inline-flex items-center justify-center rounded-full border border-white bg-chalk px-5 py-1.5 text-[11px] md:text-[12.7px] font-medium text-black tracking-[-0.3px]">
-            Vol.3 • 2026년 3월 • 서울
+            2026 • 서울
           </span>
 
-          {/* Main Title - Mobile: 293px/393px centered */}
-          <h1 className="text-[28px] md:text-[36px] lg:text-[44px] font-bold leading-[1.2] tracking-[-1.4px] text-gold-pale break-keep">
-            Disney, Microsoft 리더들이 선택한 코칭이
-            <br />
-            서울에서 4일간 열립니다.
+          {/* Main Title */}
+          <h1 className="text-[28px] md:text-[36px] lg:text-[44px] font-bold leading-[1.2] tracking-[-1.4px] text-gold-pale break-keep whitespace-pre-line">
+            {"당신이 진짜로 원하는 삶,\n여기서 시작됩니다."}
           </h1>
 
           {/* Subtitle */}
           <p className="text-[16px] md:text-[22px] lg:text-[27.5px] font-semibold leading-[1.2] text-gold-warm tracking-[-0.55px]">
-            말로는 다 설명되지 않는 4일간의 경험
+            GAP Community Korea가 준비한 프로그램으로,
             <br />
-            도대체 무엇이 사람을 변화시키는지 궁금하다면,
+            진정한 내면의 변화를 경험하세요.
           </p>
 
-          {/* Body Paragraphs */}
-          <div className="flex flex-col items-center gap-3 md:gap-4 mt-2 md:mt-4">
-            <p className="text-[15px] md:text-[17px] font-semibold leading-[1.3] text-white/95 tracking-[-0.5px]">
-              어웨이큰(Awaken)은 단순한 세미나가 아닙니다.
-            </p>
-            <p className="text-[15px] md:text-[17px] font-normal leading-[1.4] text-white/95 tracking-[-0.5px]">
-              4일간 깊이 몰입하는 이 프로그램이 정확히 무엇인지,{" "}
-              <br className="hidden md:block" />
-              나에게 왜 필요한지 &mdash; 아직 확신이 서지 않으실 겁니다.
-            </p>
-            <p className="text-[15px] md:text-[17px] font-normal leading-[1.4] text-white/95 tracking-[-0.5px]">
-              당연합니다. 보이지 않는 마음을 다루는 일이기에
-              <br />
-              직접 경험하기 전에는 알 수 없는 것들이 있습니다.
-            </p>
-            <p className="text-[15px] md:text-[17px] font-normal leading-[1.4] text-white/95 tracking-[-0.5px]">
-              먼저, 이 프로그램이 당신에게 필요한지{" "}
-              <br className="md:hidden" />
-              &lsquo;확인&rsquo;부터 해보세요.
-            </p>
-          </div>
-
           {/* CTA Button */}
-          <a href="#cta-form" className="mt-4 md:mt-8 rounded-full bg-chalk px-8 py-3 text-[15px] md:text-[16px] font-medium text-black tracking-[-0.3px] transition-opacity hover:opacity-90 active:opacity-80">
-            안내 코스(무료) 시작하기
+          <a href="#programs" className="mt-4 md:mt-8 rounded-full bg-chalk px-8 py-3 text-[15px] md:text-[16px] font-medium text-black tracking-[-0.3px] transition-opacity hover:opacity-90 active:opacity-80">
+            프로그램 알아보기
           </a>
 
           {/* Event Info */}
           <div className="mt-6 md:mt-8 flex flex-col items-center gap-2 text-[14px] md:text-[15px] text-white/70">
             <p className="flex items-center gap-2">
               <span className="text-gold-warm">&#128197;</span>
-              <span>2026년 3월 19일(목) ~ 3월 22일(일)</span>
+              <span>Reveal — 2026. 8. 8 – 10</span>
+            </p>
+            <p className="flex items-center gap-2">
+              <span className="text-gold-warm">&#128197;</span>
+              <span>Awaken 4기 — 2026. 11. 5 – 8</span>
             </p>
             <p className="flex items-center gap-2">
               <span className="text-gold-warm">&#128205;</span>
-              <span>모드라운지 신논현점</span>
-            </p>
-            <p className="flex items-center gap-2">
-              <span className="text-gold-warm">&#128279;</span>
-              <a
-                href="https://naver.me/52RwPYSD"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline underline-offset-2 decoration-white/30 hover:text-white transition-colors"
-              >
-                서울 강남구 강남대로114길 13 지하1층
-              </a>
+              <span>서울</span>
             </p>
           </div>
 
           {/* Scroll Hint */}
-          <p className="mt-10 md:mt-16 text-[13px] md:text-[14px] text-[#9b9b9b]">
+          <p className="mt-10 md:mt-16 text-[13px] md:text-[14px] text-grey-light-9">
             스크롤하여 더 알아보기 ↓
           </p>
         </div>

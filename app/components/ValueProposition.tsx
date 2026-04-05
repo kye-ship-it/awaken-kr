@@ -22,7 +22,7 @@ export default function ValueProposition() {
             backgroundClip: "text",
           }}
         >
-          어웨이큰은 당신을 위한 곳이 맞습니다.
+          GAP의 프로그램은 당신을 위한 곳입니다.
         </p>
       </div>
     </section>

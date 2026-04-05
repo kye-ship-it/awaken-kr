@@ -13,8 +13,15 @@ function generateId(name: string, phone: string): string {
   return Math.abs(hash).toString(36);
 }
 
+const programOptions = [
+  { value: "reveal", label: "Reveal" },
+  { value: "awaken4", label: "Awaken 4기" },
+  { value: "both", label: "둘 다 궁금해요" },
+];
+
 export default function CTAForm() {
   const [formData, setFormData] = useState({
+    program: "",
     name: "",
     phone: "",
     email: "",
@@ -23,8 +30,12 @@ export default function CTAForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
 
-  const handleChange = (field: string) => (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (field: "name" | "phone" | "email" | "referrer") => (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData((prev) => ({ ...prev, [field]: e.target.value }));
+  };
+
+  const handleProgramSelect = (value: string) => {
+    setFormData((prev) => ({ ...prev, program: value }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -54,25 +65,52 @@ export default function CTAForm() {
         <p className="text-[22px] md:text-[25px] lg:text-[28px] text-white/50 mb-2 md:mb-3">
           궁금함은 있지만, 아직 확신이 없다면
         </p>
-        <h2 className="text-[28px] md:text-[32px] lg:text-[36px] text-white leading-tight mb-4 md:mb-5">
+        <h2 className="text-[28px] md:text-[32px] lg:text-[36px] text-white leading-tight mb-3 md:mb-4">
           &lsquo;<span className="font-semibold">안내 코스</span>&rsquo;를
           먼저 받아보세요.
         </h2>
+        <p className="text-[14px] md:text-[15px] text-white/50 mb-4 md:mb-5">
+          Reveal 또는 Awaken, 관심 있는 프로그램의 상세 안내를 보내드립니다.
+        </p>
         <p className="text-[17px] md:text-[19px] lg:text-[21px] font-semibold text-gold-light mb-4 md:mb-5">
-          프라이빗한 안내 코스를 통해 &lsquo;Awaken&rsquo;의 제한된
-          좌석에 당신을 정중히 초대합니다.
+          프라이빗한 안내 코스를 통해 GAP의 프로그램에 당신을 정중히
+          초대합니다.
         </p>
         <p className="text-[14px] md:text-[15px] lg:text-[17px] text-white/50 leading-relaxed whitespace-pre-line">
-          {`Awaken은 공개적으로 회원을 모집하지 않는 초대 기반(Invitation-only) 프로그램입니다.\n또한 비영리 목적의 프로그램입니다. (추천인이 있는 경우, 우선 배정 혜택이 적용됩니다.)`}
+          {`GAP의 프로그램은 공개적으로 회원을 모집하지 않는 초대 기반(Invitation-only) 프로그램입니다.\n또한 비영리 목적의 프로그램입니다. (추천인이 있는 경우, 우선 배정 혜택이 적용됩니다.)`}
         </p>
       </div>
 
       <div className="max-w-[646px] mx-auto bg-[#0e0e0e] border border-grey-border rounded-2xl p-6 md:p-8 lg:p-10">
         <h3 className="text-[21px] md:text-[23px] lg:text-[25px] font-semibold text-white text-center mb-6 md:mb-8">
-          안내 코스 신청하기
+          관심 등록 및 안내 신청
         </h3>
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+          {/* Program Interest Selector */}
+          <div className="flex flex-col gap-2">
+            <label className="font-medium text-[13px] md:text-[14px] text-grey-light-9">
+              관심 프로그램
+            </label>
+            <div className="flex flex-wrap gap-2">
+              {programOptions.map((opt) => (
+                <button
+                  key={opt.value}
+                  type="button"
+                  onClick={() => handleProgramSelect(opt.value)}
+                  className={`rounded-full px-4 py-2 text-[13px] md:text-[14px] border transition-colors cursor-pointer ${
+                    formData.program === opt.value
+                      ? "border-gold bg-gold/15 text-gold"
+                      : "border-grey-border bg-grey-dark text-white/60 hover:border-white/30"
+                  }`}
+                >
+                  {opt.label}
+                </button>
+              ))}
+            </div>
+            <p className="text-[12px] text-grey-light-8">선택하지 않으셔도 됩니다</p>
+          </div>
+
           <FormField label="이름" name="name" placeholder="김한국" value={formData.name} onChange={handleChange("name")} />
           <FormField
             label="연락처 (자료 발송 및 안내용)"

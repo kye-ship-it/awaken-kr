@@ -44,6 +44,7 @@ const timelineItems = [
 export default function InvitationTimeline() {
   return (
     <section
+      id="awaken"
       className="relative px-7 md:px-8 lg:px-16 py-20 md:py-28 lg:py-36"
       style={{
         background:
@@ -51,6 +52,16 @@ export default function InvitationTimeline() {
       }}
     >
       <div className="max-w-[1100px] mx-auto">
+        {/* Awaken Program Header */}
+        <div className="text-center mb-8 md:mb-10">
+          <span className="font-[family-name:var(--font-dm-mono)] text-[12px] md:text-[13px] text-gold tracking-[0.2em] uppercase block mb-3">
+            AWAKEN PROGRAM
+          </span>
+          <p className="text-[14px] md:text-[16px] text-white/60">
+            4기 • 2026. 11. 5(수) – 11. 8(토)
+          </p>
+        </div>
+
         {/* Header */}
         <div className="text-center mb-14 md:mb-20">
           <p className="text-[14px] md:text-[15px] leading-relaxed text-white/50 mb-5 md:mb-6 whitespace-pre-line">
