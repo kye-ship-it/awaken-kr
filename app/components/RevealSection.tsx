@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 const REVEAL_EARLY_BIRD_PAYMENT_URL = "https://www.payapp.kr/L/z4d9o3";
+const REVEAL_BANK_ACCOUNT = "토스뱅크 1002-4710-6716 (펀더멘탈)";
 
 const REVEAL_TRAINER = {
   name: "Nathan Neighbour",
@@ -92,6 +93,7 @@ export default function RevealSection() {
               </h3>
               <p className="text-[13px] md:text-[14px] text-white/55 leading-relaxed">
                 2026년 5월 31일까지 얼리버드 혜택이 적용됩니다.
+                PayApp 결제 또는 계좌이체로 등록할 수 있습니다.
               </p>
             </div>
 
@@ -106,6 +108,18 @@ export default function RevealSection() {
                 5/31까지
               </p>
             </div>
+          </div>
+
+          <div className="mt-5 md:mt-6 pt-5 md:pt-6 border-t border-white/10">
+            <span className="font-[family-name:var(--font-dm-mono)] text-[11px] md:text-[12px] text-gold tracking-[0.15em] uppercase block mb-2">
+              BANK TRANSFER
+            </span>
+            <p className="text-[14px] md:text-[15px] text-white/80 leading-relaxed">
+              계좌이체: {REVEAL_BANK_ACCOUNT}
+            </p>
+            <p className="text-[12px] md:text-[13px] text-white/45 mt-1">
+              입금 후 문의하기를 통해 성함과 연락처를 남겨주세요.
+            </p>
           </div>
         </div>
 
