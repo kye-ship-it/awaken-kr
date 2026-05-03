@@ -32,9 +32,17 @@ export default function ProgramOverview() {
             <span className="inline-flex self-start items-center rounded-full bg-white/[0.06] border border-grey-border px-4 py-1.5 text-[12px] md:text-[13px] text-white/70 mb-5">
               2026. 8. 8 – 10 • 서울
             </span>
-            <p className="text-[14px] md:text-[15px] text-white/70 leading-relaxed mb-6">
+            <p className="text-[14px] md:text-[15px] text-white/70 leading-relaxed mb-4">
               삶 속 반복되는 패턴을 탐색하고, 나만의 비전을 발견하는 3일
             </p>
+            <div className="rounded-xl border border-gold/25 bg-gold/10 px-4 py-3 mb-6">
+              <p className="text-[12px] md:text-[13px] text-white/50 line-through mb-1">
+                정가 145만원
+              </p>
+              <p className="text-[17px] md:text-[19px] font-semibold text-gold-light">
+                얼리버드 95만원 <span className="text-[12px] md:text-[13px] font-normal text-white/55">5/31까지</span>
+              </p>
+            </div>
             <ul className="flex flex-col gap-2.5 mb-8 flex-1">
               {[
                 "3일 집중 프로그램",
