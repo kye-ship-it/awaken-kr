@@ -4,8 +4,11 @@ export default function MasterTrainer() {
   return (
     <section className="flex flex-col items-center px-6 md:px-8 lg:px-16 pt-24 md:pt-32 lg:pt-40 pb-16 md:pb-20 lg:pb-24">
       {/* Section Title - Figma: x=559, width=327 */}
+      <span className="font-[family-name:var(--font-dm-mono)] text-[12px] md:text-[13px] text-gold tracking-[0.2em] uppercase block mb-4">
+        AWAKEN 4TH MASTER TRAINER
+      </span>
       <p className="text-[17px] md:text-[20px] text-white text-center">
-        초대된 소수만을 위한, 검증된 마스터의 안내
+        Awaken 4기를 위한, 검증된 마스터의 안내
       </p>
 
       {/* Gradient Subtitle - Figma: x=355, width=735 */}
@@ -35,7 +38,7 @@ export default function MasterTrainer() {
 
         {/* Name - Figma: centered below photo */}
         <p className="mt-6 text-[13px] md:text-[14.5px] text-white/50">
-          GAP Community Master Trainer
+          Awaken 4기 Master Trainer
         </p>
         <h3 className="mt-1 font-[family-name:var(--font-prata)] text-[28px] md:text-[33px] text-white">
           Amy Maxwell

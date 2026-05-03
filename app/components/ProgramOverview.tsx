@@ -32,8 +32,11 @@ export default function ProgramOverview() {
             <span className="inline-flex self-start items-center rounded-full bg-white/[0.06] border border-grey-border px-4 py-1.5 text-[12px] md:text-[13px] text-white/70 mb-5">
               2026. 8. 8 – 10 • 서울
             </span>
-            <p className="text-[14px] md:text-[15px] text-white/70 leading-relaxed mb-4">
+            <p className="text-[14px] md:text-[15px] text-white/70 leading-relaxed mb-3">
               삶 속 반복되는 패턴을 탐색하고, 나만의 비전을 발견하는 3일
+            </p>
+            <p className="font-[family-name:var(--font-dm-mono)] text-[11px] md:text-[12px] text-gold tracking-[0.12em] uppercase mb-4">
+              Trainer: Nathan Neighbour
             </p>
             <div className="rounded-xl border border-gold/25 bg-gold/10 px-4 py-3 mb-6">
               <p className="text-[12px] md:text-[13px] text-white/50 line-through mb-1">
@@ -78,8 +81,11 @@ export default function ProgramOverview() {
             <span className="inline-flex self-start items-center rounded-full bg-white/[0.06] border border-grey-border px-4 py-1.5 text-[12px] md:text-[13px] text-white/70 mb-5">
               4기 • 2026. 11. 5 – 8 • 서울
             </span>
-            <p className="text-[14px] md:text-[15px] text-white/70 leading-relaxed mb-6">
+            <p className="text-[14px] md:text-[15px] text-white/70 leading-relaxed mb-3">
               보이지 않던 믿음과 한계를 넘어, 새로운 미래를 여는 4일
+            </p>
+            <p className="font-[family-name:var(--font-dm-mono)] text-[11px] md:text-[12px] text-gold tracking-[0.12em] uppercase mb-6">
+              Trainer: Amy Maxwell
             </p>
             <ul className="flex flex-col gap-2.5 mb-8 flex-1">
               {[
