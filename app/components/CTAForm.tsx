@@ -15,13 +15,11 @@ function generateId(name: string, phone: string): string {
 
 const programOptions = [
   { value: "reveal", label: "Reveal" },
-  { value: "awaken4", label: "Awaken 4기" },
-  { value: "both", label: "둘 다 궁금해요" },
 ];
 
 export default function CTAForm() {
   const [formData, setFormData] = useState({
-    program: "",
+    program: "reveal",
     name: "",
     phone: "",
     email: "",
@@ -70,10 +68,10 @@ export default function CTAForm() {
           먼저 받아보세요.
         </h2>
         <p className="text-[14px] md:text-[15px] text-white/50 mb-4 md:mb-5">
-          Reveal 또는 Awaken, 관심 있는 프로그램의 상세 안내를 보내드립니다.
+          2026년 8월 Reveal 프로그램의 상세 안내를 보내드립니다.
         </p>
         <p className="text-[17px] md:text-[19px] lg:text-[21px] font-semibold text-gold-light mb-4 md:mb-5">
-          프라이빗한 안내 코스를 통해 GAP의 프로그램에 당신을 정중히
+          프라이빗한 안내 코스를 통해 Reveal에 당신을 정중히
           초대합니다.
         </p>
         <p className="text-[14px] md:text-[15px] lg:text-[17px] text-white/50 leading-relaxed whitespace-pre-line">
@@ -108,7 +106,9 @@ export default function CTAForm() {
                 </button>
               ))}
             </div>
-            <p className="text-[12px] text-grey-light-8">선택하지 않으셔도 됩니다</p>
+            <p className="text-[12px] text-grey-light-8">
+              현재 공개 안내는 Reveal 중심으로 진행됩니다
+            </p>
           </div>
 
           <FormField label="이름" name="name" placeholder="김한국" value={formData.name} onChange={handleChange("name")} />
@@ -147,7 +147,7 @@ export default function CTAForm() {
             disabled={isSubmitting}
             className="mx-auto bg-chalk text-black rounded-full px-5 py-2.5 font-medium text-[15px] md:text-[16px] mt-2 hover:bg-white transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            {isSubmitting ? "전송 중..." : "안내 코스(무료) 시작하기"}
+            {isSubmitting ? "전송 중..." : "Reveal 안내 코스(무료) 시작하기"}
           </button>
 
           {submitStatus === "error" && (

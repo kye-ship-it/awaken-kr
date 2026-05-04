@@ -13,7 +13,7 @@ export default function FinalCTA() {
         </div>
 
         {/* Pathway Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 max-w-[620px] mx-auto gap-6 md:gap-8">
           {/* Reveal Pathway */}
           <div className="bg-grey-7 border border-grey-border rounded-2xl p-6 md:p-8 flex flex-col">
             <span className="font-[family-name:var(--font-dm-mono)] text-[11px] md:text-[12px] text-white/40 tracking-[0.15em] uppercase block mb-4">
@@ -32,26 +32,11 @@ export default function FinalCTA() {
               관심 등록 →
             </a>
           </div>
-
-          {/* Awaken Pathway */}
-          <div className="bg-grey-7 border border-gold/30 rounded-2xl p-6 md:p-8 flex flex-col shadow-[0_0_20px_rgba(201,189,138,0.06)]">
-            <span className="font-[family-name:var(--font-dm-mono)] text-[11px] md:text-[12px] text-white/40 tracking-[0.15em] uppercase block mb-4">
-              4-DAY PROGRAM
-            </span>
-            <h3 className="font-[family-name:var(--font-dm-serif)] text-[24px] md:text-[28px] text-white mb-2">
-              Awaken
-            </h3>
-            <p className="text-[15px] md:text-[16px] text-white/60 mb-6 flex-1">
-              한계를 넘어서는 4일
-            </p>
-            <a
-              href="#cta-form"
-              className="text-[14px] md:text-[15px] text-gold hover:text-gold-light transition-colors"
-            >
-              안내 코스 시작하기 →
-            </a>
-          </div>
         </div>
+
+        <p className="mt-6 text-center text-[13px] md:text-[14px] text-white/45 leading-relaxed">
+          Reveal 이후 더 깊은 여정이 필요한 분들께는 차후 심화 프로그램을 별도로 안내드립니다.
+        </p>
       </div>
     </section>
   );

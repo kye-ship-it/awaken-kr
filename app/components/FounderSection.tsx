@@ -90,9 +90,9 @@ export default function FounderSection() {
 
         {/* Description */}
         <p className="mt-4 md:mt-6 text-[17px] md:text-[20px] text-[#868686] leading-relaxed max-w-[870px]">
-          Awaken은 일회성 이벤트가 아닙니다. 1998년 설립되어 20년 넘게 증명된
+          Reveal은 일회성 이벤트가 아닙니다. 1998년 설립되어 20년 넘게 증명된
           GAP Community의 &lsquo;변혁적 리더십(Transformational
-          Leadership)&rsquo; 정수를 그대로 이식했습니다.
+          Leadership)&rsquo; 여정으로 들어가는 첫 관문입니다.
         </p>
 
         {/* Vertical line separator */}

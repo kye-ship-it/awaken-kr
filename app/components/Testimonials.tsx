@@ -3,19 +3,19 @@ const testimonials = [
     quote:
       "리셋하고 싶거나, 인생의 방향성을 새롭게 잡고 싶은 사람에게 강력 추천합니다.",
     name: "Esther Mun",
-    role: "40대, 디자인 회사 대표 (Awaken 1기)",
+    role: "40대, 디자인 회사 대표",
   },
   {
     quote:
       "내 인생의 열정을 신앙적 관점과 관계적 관점에서 다시 찾게 되었어요.",
     name: "Paul Jung",
-    role: "40대, 컨설팅 회사 대표 (Awaken 1기)",
+    role: "40대, 컨설팅 회사 대표",
   },
   {
     quote:
       "내가 이 세상에서 살아가는 비전이 결국에는 다른 누군가에게 선한 영향을 끼치는 것이라는 걸 스스로 찾게 되었어요.",
     name: "Hannes Lee",
-    role: "40대, 스타트업 CMO (Awaken 1기)",
+    role: "40대, 스타트업 CMO",
   },
 ];
 
@@ -48,12 +48,12 @@ export default function Testimonials() {
         ))}
       </div>
 
-      {/* Awaken Introduction Video */}
+      {/* GAP Introduction Video */}
       <div className="mt-12 md:mt-16 max-w-[800px] mx-auto w-full">
         <iframe
           className="w-full aspect-video rounded-xl"
           src="https://www.youtube.com/embed/xxABMhtoBUI"
-          title="Awaken 소개 영상"
+          title="GAP 소개 영상"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
         />
