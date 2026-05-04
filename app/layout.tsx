@@ -25,6 +25,7 @@ const prata = Prata({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://awaken-kr.vercel.app"),
   title: "GAP Community Korea | Reveal",
   description:
     "GAP Community Korea가 준비한 2026년 8월 Reveal 프로그램으로 진정한 내면의 변화를 경험하세요.",
@@ -36,7 +37,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/awaken-kr-og.jpg",
+        url: "/images/reveal-og.jpg",
         width: 1200,
         height: 630,
         alt: "GAP Community Korea Reveal",
