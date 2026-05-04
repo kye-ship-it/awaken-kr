@@ -11,16 +11,16 @@ export default function ProgramOverview() {
             PROGRAMS
           </span>
           <h2 className="text-[26px] md:text-[32px] lg:text-[38px] font-semibold leading-tight text-white mb-3 md:mb-4">
-            당신의 변화를 위한 두 가지 여정
+            2026년 8월, Reveal로 시작하는 여정
           </h2>
           <p className="text-[15px] md:text-[17px] text-white/50 leading-relaxed">
-            GAP Community Korea가 준비한 두 프로그램 중, 지금 나에게 맞는
-            여정을 선택하세요.
+            GAP Community Korea의 첫 경험은 Reveal에서 시작됩니다.
+            Awaken은 Reveal 이후 더 깊은 여정을 원하는 분들을 위한 다음 단계로 안내됩니다.
           </p>
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 max-w-[620px] mx-auto">
           {/* Reveal Card */}
           <div className="bg-grey-7 border border-grey-border rounded-2xl p-6 md:p-8 flex flex-col">
             <h3 className="font-[family-name:var(--font-dm-serif)] text-[28px] md:text-[32px] text-white mb-2">
@@ -69,47 +69,6 @@ export default function ProgramOverview() {
               Reveal 알아보기
             </a>
           </div>
-
-          {/* Awaken Card */}
-          <div className="bg-grey-7 border border-grey-border rounded-2xl p-6 md:p-8 flex flex-col">
-            <h3 className="font-[family-name:var(--font-dm-serif)] text-[28px] md:text-[32px] text-white mb-2">
-              Awaken
-            </h3>
-            <p className="text-[17px] md:text-[19px] text-gold-light font-medium mb-4">
-              한계를 넘어서는 4일
-            </p>
-            <span className="inline-flex self-start items-center rounded-full bg-white/[0.06] border border-grey-border px-4 py-1.5 text-[12px] md:text-[13px] text-white/70 mb-5">
-              4기 • 2026. 11. 5 – 8 • 서울
-            </span>
-            <p className="text-[14px] md:text-[15px] text-white/70 leading-relaxed mb-3">
-              보이지 않던 믿음과 한계를 넘어, 새로운 미래를 여는 4일
-            </p>
-            <p className="font-[family-name:var(--font-dm-mono)] text-[11px] md:text-[12px] text-gold tracking-[0.12em] uppercase mb-6">
-              Trainer: Amy Maxwell
-            </p>
-            <ul className="flex flex-col gap-2.5 mb-8 flex-1">
-              {[
-                "4일간 깊은 몰입 (오전 10시 ~ 오후 10시)",
-                "세계적 마스터 트레이너 직접 진행",
-                "인터랙티브 강의 + 소그룹 워크샵",
-                "실질적 삶의 변화 경험",
-              ].map((item) => (
-                <li
-                  key={item}
-                  className="flex items-start gap-2.5 text-[13px] md:text-[14px] text-white/80"
-                >
-                  <span className="w-1.5 h-1.5 rounded-full bg-gold mt-1.5 flex-shrink-0" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-            <a
-              href="#awaken"
-              className="inline-flex items-center justify-center rounded-full bg-gold text-black px-6 py-2.5 text-[14px] md:text-[15px] font-medium transition-opacity hover:opacity-90"
-            >
-              Awaken 알아보기
-            </a>
-          </div>
         </div>
 
         {/* Bottom link */}
@@ -118,7 +77,7 @@ export default function ProgramOverview() {
             href="#faq"
             className="text-[14px] md:text-[15px] text-white/50 hover:text-white/70 transition-colors"
           >
-            어떤 프로그램이 나에게 맞을까? →
+Reveal 이후의 여정이 궁금하다면? →
           </a>
         </div>
       </div>

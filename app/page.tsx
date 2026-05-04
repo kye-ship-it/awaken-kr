@@ -6,9 +6,6 @@ import ProblemCards from "./components/ProblemCards";
 import CostSection from "./components/CostSection";
 import ProgramOverview from "./components/ProgramOverview";
 import RevealSection from "./components/RevealSection";
-import TransitionSeparator from "./components/TransitionSeparator";
-import InvitationTimeline from "./components/InvitationTimeline";
-import MasterTrainer from "./components/MasterTrainer";
 import Testimonials from "./components/Testimonials";
 import CTAForm from "./components/CTAForm";
 import FounderSection from "./components/FounderSection";
@@ -30,9 +27,6 @@ export default function Home() {
         <CostSection />
         <ProgramOverview />
         <RevealSection />
-        <TransitionSeparator />
-        <InvitationTimeline />
-        <MasterTrainer />
         <FounderSection />
         <GlobalLeaders />
         <Testimonials />

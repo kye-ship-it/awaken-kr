@@ -60,10 +60,6 @@ export default function HeroSection() {
               <span>Reveal — 2026. 8. 8 – 10</span>
             </p>
             <p className="flex items-center gap-2">
-              <span className="text-gold-warm">&#128197;</span>
-              <span>Awaken 4기 — 2026. 11. 5 – 8</span>
-            </p>
-            <p className="flex items-center gap-2">
               <span className="text-gold-warm">&#128205;</span>
               <span>서울</span>
             </p>
