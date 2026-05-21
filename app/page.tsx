@@ -4,6 +4,7 @@ import UserDoubts from "./components/UserDoubts";
 import ValueProposition from "./components/ValueProposition";
 import ProblemCards from "./components/ProblemCards";
 import CostSection from "./components/CostSection";
+import RevealExplainer from "./components/RevealExplainer";
 import ProgramOverview from "./components/ProgramOverview";
 import RevealSection from "./components/RevealSection";
 import Testimonials from "./components/Testimonials";
@@ -25,6 +26,7 @@ export default function Home() {
         <ProblemCards />
         <div className="h-px w-[80px] mx-auto bg-white/[0.08]" />
         <CostSection />
+        <RevealExplainer />
         <ProgramOverview />
         <RevealSection />
         <FounderSection />

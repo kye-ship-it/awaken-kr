@@ -8,14 +8,14 @@ export default function ProgramOverview() {
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-16">
           <span className="font-[family-name:var(--font-dm-mono)] text-[12px] md:text-[13px] text-gold tracking-[0.2em] uppercase block mb-3">
-            PROGRAMS
+            PROGRAM SUMMARY
           </span>
           <h2 className="text-[26px] md:text-[32px] lg:text-[38px] font-semibold leading-tight text-white mb-3 md:mb-4">
-            Reveal은 무엇을 하는 프로그램인가요?
+            Reveal 2026 요약
           </h2>
           <p className="text-[15px] md:text-[17px] text-white/50 leading-relaxed">
-            Reveal은 삶에서 반복되는 감정·관계·선택의 패턴을 발견하고,
-            그 아래의 믿음과 태도를 새롭게 바라보며, 나만의 비전을 다시 정렬하는 3일 과정입니다.
+            일정, 진행 방식, 트레이너, 비용을 한 번에 확인하세요.
+            더 깊은 여정이 필요한 분들께는 Reveal 이후 다음 단계를 별도로 안내드립니다.
           </p>
         </div>
 
