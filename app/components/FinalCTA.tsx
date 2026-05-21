@@ -23,13 +23,13 @@ export default function FinalCTA() {
               Reveal
             </h3>
             <p className="text-[15px] md:text-[16px] text-white/60 mb-6 flex-1">
-              나를 마주하는 3일
+              반복되는 삶의 패턴을 발견하고, 원하는 방향으로 다시 정렬하는 3일
             </p>
             <a
               href="#cta-form"
               className="text-[14px] md:text-[15px] text-gold hover:text-gold-light transition-colors"
             >
-              관심 등록 →
+              Reveal 안내 코스 시작 →
             </a>
           </div>
         </div>

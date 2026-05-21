@@ -11,11 +11,11 @@ export default function ProgramOverview() {
             PROGRAMS
           </span>
           <h2 className="text-[26px] md:text-[32px] lg:text-[38px] font-semibold leading-tight text-white mb-3 md:mb-4">
-            2026년 8월, Reveal로 시작하는 여정
+            Reveal은 무엇을 하는 프로그램인가요?
           </h2>
           <p className="text-[15px] md:text-[17px] text-white/50 leading-relaxed">
-            GAP Community Korea의 첫 경험은 Reveal에서 시작됩니다.
-            Awaken은 Reveal 이후 더 깊은 여정을 원하는 분들을 위한 다음 단계로 안내됩니다.
+            Reveal은 삶에서 반복되는 감정·관계·선택의 패턴을 발견하고,
+            그 아래의 믿음과 태도를 새롭게 바라보며, 나만의 비전을 다시 정렬하는 3일 과정입니다.
           </p>
         </div>
 
@@ -27,13 +27,13 @@ export default function ProgramOverview() {
               Reveal
             </h3>
             <p className="text-[17px] md:text-[19px] text-gold-light font-medium mb-4">
-              나를 마주하는 3일
+              패턴 발견 · 믿음 점검 · 비전 정렬
             </p>
             <span className="inline-flex self-start items-center rounded-full bg-white/[0.06] border border-grey-border px-4 py-1.5 text-[12px] md:text-[13px] text-white/70 mb-5">
               2026. 8. 8 – 10 • 서울
             </span>
             <p className="text-[14px] md:text-[15px] text-white/70 leading-relaxed mb-3">
-              삶 속 반복되는 패턴을 탐색하고, 나만의 비전을 발견하는 3일
+              강의형 세미나가 아니라, 체험과 대화, 소그룹 나눔, 1:1 코칭을 통해 내가 왜 같은 방식으로 반응하고 선택하는지 직접 알아차리는 과정입니다.
             </p>
             <p className="font-[family-name:var(--font-dm-mono)] text-[11px] md:text-[12px] text-gold tracking-[0.12em] uppercase mb-4">
               Trainer: Nathan Neighbour
@@ -48,10 +48,10 @@ export default function ProgramOverview() {
             </div>
             <ul className="flex flex-col gap-2.5 mb-8 flex-1">
               {[
-                "3일 집중 프로그램",
-                "소그룹 대화 (4–6명)",
-                "1:1 코칭 세션",
-                "자기 인식과 패턴 발견",
+                "반복되는 감정·관계 패턴 발견",
+                "소그룹 대화와 체험형 세션",
+                "1:1 코칭을 통한 개인화된 인사이트",
+                "비전과 다음 행동 정렬",
               ].map((item) => (
                 <li
                   key={item}
