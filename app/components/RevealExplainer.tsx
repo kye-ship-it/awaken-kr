@@ -1,58 +1,48 @@
-const hiddenDrivers = [
+const benefits = [
   {
-    name: "Being Right",
-    desire: "내가 옳다는 것을 지키고 싶을 때",
-    cost: "새로운 가능성보다 익숙한 자기 서사를 반복하게 됩니다.",
+    label: "SELF-AWARENESS",
+    title: "내가 반복하는 반응을 더 선명하게 보게 됩니다",
+    description:
+      "비슷한 상황에서 왜 늘 같은 감정이 올라오는지, 왜 말하고 나서 후회하는지, 왜 중요한 순간에 멈추는지 스스로 관찰할 수 있게 됩니다.",
   },
   {
-    name: "Being Comfortable",
-    desire: "불편함과 고통을 피하고 싶을 때",
-    cost: "진짜 원하는 변화 앞에서 계속 미루거나 멈추게 됩니다.",
+    label: "RELATIONSHIPS",
+    title: "관계에서 반복되는 갈등의 패턴을 알아차립니다",
+    description:
+      "가족, 연인, 동료와의 관계에서 내가 방어하거나 피하거나 증명하려는 순간을 발견하고, 이전과 다른 방식으로 대화할 가능성을 봅니다.",
   },
   {
-    name: "Being in Control",
-    desire: "불확실한 상황을 통제하고 싶을 때",
-    cost: "관계와 선택에서 열린 대화보다 안전한 거리두기를 택하게 됩니다.",
-  },
-  {
-    name: "Looking Good",
-    desire: "무능하거나 부족해 보이고 싶지 않을 때",
-    cost: "진짜 마음을 말하기보다 괜찮은 척, 아는 척, 강한 척하게 됩니다.",
+    label: "DIRECTION",
+    title: "막연한 변화 욕구가 더 구체적인 방향으로 정리됩니다",
+    description:
+      "‘이대로는 아닌 것 같다’는 감각을 넘어서, 내가 무엇을 원하고 어떤 선택을 시작해야 하는지 더 분명한 언어로 정리합니다.",
   },
 ];
 
-const revealProcess = [
-  {
-    step: "01",
-    title: "결과를 직시합니다",
-    description:
-      "내가 원한다고 말한 것과 실제 삶에 나타난 결과 사이의 차이를 봅니다. 결과는 비난이 아니라, 나의 진짜 의도를 보여주는 거울입니다.",
-  },
-  {
-    step: "02",
-    title: "숨은 의도를 발견합니다",
-    description:
-      "표면 의도 아래에서 나를 보호하던 의도를 찾습니다. 옳고 싶음, 편하고 싶음, 통제하고 싶음, 좋아 보이고 싶음이 어떻게 작동하는지 알아차립니다.",
-  },
-  {
-    step: "03",
-    title: "대가를 계산합니다",
-    description:
-      "그 숨은 의도를 지키기 위해 내가 치르고 있던 대가를 봅니다. 고립, 후회, 정체, 반복되는 갈등을 계속 선택할 것인지 묻습니다.",
-  },
-  {
-    step: "04",
-    title: "다른 선택이 가능해집니다",
-    description:
-      "문제의 원인을 의지력 부족으로 몰아가지 않고, 내가 무엇을 선택해왔는지 보게 됩니다. 보이면 선택할 수 있고, 선택하면 방향이 바뀝니다.",
-  },
+const situations = [
+  "겉으로는 괜찮은데 속으로는 같은 불안과 무기력이 반복되는 분",
+  "관계에서 비슷한 갈등을 반복하지만 원인을 정확히 설명하기 어려운 분",
+  "열심히 살고 있는데 내가 진짜 원하는 방향으로 가고 있는지 헷갈리는 분",
+  "변하고 싶은 마음은 있는데 막상 행동하려 하면 자꾸 멈추거나 미루게 되는 분",
 ];
 
 const outcomes = [
-  "내가 왜 같은 문제 앞에서 멈추는지 더 정확히 이해합니다.",
-  "표면적으로 원하는 것과 실제로 선택해온 것 사이의 간극을 봅니다.",
-  "반복되는 관계 갈등과 감정 반응을 자기비난이 아니라 관찰의 대상으로 다룰 수 있습니다.",
-  "변화를 막던 숨은 이득과 그 대가를 보고, 계속 지불할지 새롭게 선택할지 결정합니다.",
+  "내 삶의 반복 패턴을 더 명확하게 설명할 수 있습니다.",
+  "문제를 단순히 성격, 의지력, 환경 탓으로만 보지 않게 됩니다.",
+  "관계와 선택 앞에서 자동반응 대신 새로운 선택지를 떠올릴 수 있습니다.",
+  "지금까지 치르고 있던 감정적 대가를 보고, 앞으로의 방향을 다시 선택할 수 있습니다.",
+];
+
+const notThis = [
+  "정답을 주입하는 강의",
+  "억지로 감정을 끌어내는 훈련",
+  "단기간에 인생이 완전히 바뀐다고 약속하는 프로그램",
+];
+
+const insteadThis = [
+  "내 삶을 안전하게 들여다보는 체험형 과정",
+  "소그룹 대화와 코칭을 통한 자기 발견",
+  "반복되는 결과 뒤의 이유를 발견하고 새로운 선택을 준비하는 시간",
 ];
 
 export default function RevealExplainer() {
@@ -74,10 +64,9 @@ export default function RevealExplainer() {
             Reveal은 어떤 프로그램인가요?
           </h2>
           <p className="text-[16px] md:text-[19px] text-white/70 leading-relaxed break-keep">
-            Reveal은 “어떻게 하면 바뀔 수 있을까?”보다 먼저,
-            “나는 왜 지금까지 같은 결과를 반복해왔을까?”를 정직하게 보는 프로그램입니다.
-            내가 말로 원하는 것과 실제 삶에 나타난 결과 사이의 간극을 보고,
-            그 아래에 있던 숨은 의도를 발견하도록 돕습니다.
+            Reveal은 나를 고치거나 바꾸라고 몰아붙이는 시간이 아닙니다.
+            내 삶에서 반복되는 감정, 관계, 선택의 패턴을 안전하게 들여다보고,
+            “왜 나는 비슷한 결과를 반복해왔을까?”라는 질문에 더 정직하게 가까워지는 3일간의 체험형 프로그램입니다.
           </p>
         </div>
 
@@ -85,24 +74,19 @@ export default function RevealExplainer() {
           <div className="bg-grey-7 border border-gold/25 rounded-2xl p-6 md:p-8 flex flex-col justify-between">
             <div>
               <p className="font-[family-name:var(--font-dm-mono)] text-[11px] md:text-[12px] text-gold tracking-[0.15em] uppercase mb-4">
-                CORE FRAMEWORK
+                CORE PROMISE
               </p>
               <h3 className="text-[24px] md:text-[30px] font-semibold leading-tight text-gold-light mb-5">
-                결과는 거짓말하지 않습니다. 결과는 내 의도를 보여주는 거울입니다.
+                이유를 알게 되면, 같은 방식으로만 살지 않아도 됩니다.
               </h3>
               <p className="text-[14px] md:text-[16px] text-white/65 leading-relaxed mb-5">
-                GAP의 프레임워크는 결과를 단순한 운이나 환경 탓으로 보지 않습니다.
-                내가 얻고 있는 결과 안에는, 내가 의식하지 못한 의도와 선택이 드러납니다.
+                사람은 변하고 싶어도 익숙한 방식으로 돌아갑니다. Reveal은 그 익숙한 방식이 어디서 반복되는지,
+                그리고 그것이 내 삶에 어떤 대가를 만들고 있었는지 보게 합니다.
               </p>
-              <div className="rounded-2xl border border-white/10 bg-black/30 px-5 py-4">
-                <p className="font-[family-name:var(--font-dm-mono)] text-[12px] md:text-[13px] text-white/45 tracking-[0.12em] uppercase mb-2">
-                  R = I × M
-                </p>
-                <p className="text-[15px] md:text-[17px] text-white/82 leading-relaxed">
-                  결과(Result)는 의도(Intention)와 방법(Method)의 곱입니다.
-                  방법을 더 찾기 전에, 먼저 내 진짜 의도를 봅니다.
-                </p>
-              </div>
+              <p className="text-[14px] md:text-[16px] text-white/65 leading-relaxed">
+                핵심 경험을 미리 설명으로 소비시키기보다, 참여자가 직접 발견하도록 설계되어 있습니다.
+                이 페이지에서는 프로그램의 방향과 기대할 수 있는 변화를 중심으로 안내합니다.
+              </p>
             </div>
             <a
               href="#cta-form"
@@ -113,114 +97,107 @@ export default function RevealExplainer() {
           </div>
 
           <div className="grid grid-cols-1 gap-3 md:gap-4">
-            <div className="bg-grey-7 border border-grey-border rounded-2xl p-5 md:p-6">
-              <p className="font-[family-name:var(--font-dm-mono)] text-[11px] md:text-[12px] text-gold tracking-[0.13em] uppercase mb-2">
-                SURFACE VS HIDDEN INTENTION
-              </p>
-              <h3 className="text-[18px] md:text-[21px] font-semibold text-white mb-2">
-                원한다고 말하는 것과 실제로 선택하는 것이 다를 수 있습니다
-              </h3>
-              <p className="text-[14px] md:text-[15px] text-white/60 leading-relaxed">
-                표면적으로는 관계 회복, 성장, 변화, 도전을 원한다고 말하지만,
-                내면에서는 거절당하지 않기, 틀리지 않기, 통제권을 잃지 않기 같은 숨은 의도가 더 강하게 작동할 수 있습니다.
-              </p>
-            </div>
-
-            <div className="bg-grey-7 border border-grey-border rounded-2xl p-5 md:p-6">
-              <p className="font-[family-name:var(--font-dm-mono)] text-[11px] md:text-[12px] text-gold tracking-[0.13em] uppercase mb-2">
-                DRIFT
-              </p>
-              <h3 className="text-[18px] md:text-[21px] font-semibold text-white mb-2">
-                의지력이 약해서가 아니라, 의도가 서로 충돌해서 멈춥니다
-              </h3>
-              <p className="text-[14px] md:text-[15px] text-white/60 leading-relaxed">
-                표면 의도와 숨은 의도가 충돌하면 행동은 흐려지고, 삶은 표류합니다.
-                Reveal은 그 표류를 비난하지 않고, 무엇이 나를 뒤로 끌어당기고 있었는지 보게 합니다.
-              </p>
-            </div>
-
-            <div className="bg-grey-7 border border-grey-border rounded-2xl p-5 md:p-6">
-              <p className="font-[family-name:var(--font-dm-mono)] text-[11px] md:text-[12px] text-gold tracking-[0.13em] uppercase mb-2">
-                CHOOSE
-              </p>
-              <h3 className="text-[18px] md:text-[21px] font-semibold text-white mb-2">
-                보이면, 선택할 수 있습니다
-              </h3>
-              <p className="text-[14px] md:text-[15px] text-white/60 leading-relaxed">
-                숨은 의도를 없애라고 몰아붙이는 것이 아닙니다.
-                그 의도가 주는 이득과 내가 치르는 대가를 본 뒤, 계속 선택할지 다르게 선택할지 결정하는 과정입니다.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="mb-8 md:mb-10">
-          <div className="text-center mb-6 md:mb-8">
-            <p className="font-[family-name:var(--font-dm-mono)] text-[11px] md:text-[12px] text-gold tracking-[0.15em] uppercase mb-3">
-              HIDDEN DRIVERS
-            </p>
-            <h3 className="text-[22px] md:text-[28px] font-semibold text-white leading-tight">
-              Reveal에서 살펴보는 숨은 의도들
-            </h3>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
-            {hiddenDrivers.map((driver) => (
+            {benefits.map((benefit) => (
               <div
-                key={driver.name}
-                className="bg-[#0e0e0e] border border-grey-border rounded-2xl p-5 md:p-6"
+                key={benefit.label}
+                className="bg-grey-7 border border-grey-border rounded-2xl p-5 md:p-6"
               >
-                <h4 className="font-[family-name:var(--font-dm-mono)] text-[13px] md:text-[14px] text-gold-light tracking-[0.08em] mb-2">
-                  {driver.name}
-                </h4>
-                <p className="text-[16px] md:text-[18px] font-semibold text-white mb-2">
-                  {driver.desire}
+                <p className="font-[family-name:var(--font-dm-mono)] text-[11px] md:text-[12px] text-gold tracking-[0.13em] uppercase mb-2">
+                  {benefit.label}
                 </p>
-                <p className="text-[13px] md:text-[14px] text-white/58 leading-relaxed">
-                  {driver.cost}
+                <h3 className="text-[18px] md:text-[21px] font-semibold text-white mb-2">
+                  {benefit.title}
+                </h3>
+                <p className="text-[14px] md:text-[15px] text-white/60 leading-relaxed">
+                  {benefit.description}
                 </p>
               </div>
             ))}
           </div>
         </div>
 
-        <div className="bg-[#0e0e0e] border border-grey-border rounded-2xl p-6 md:p-8 mb-8 md:mb-10">
-          <div className="grid grid-cols-1 md:grid-cols-[240px_1fr] gap-6 md:gap-8">
-            <div>
-              <p className="font-[family-name:var(--font-dm-mono)] text-[11px] md:text-[12px] text-gold tracking-[0.15em] uppercase mb-3">
-                PROCESS
-              </p>
-              <h3 className="text-[22px] md:text-[26px] font-semibold text-white leading-tight">
-                Reveal에서 일어나는 변화의 흐름
-              </h3>
-            </div>
-            <div className="grid grid-cols-1 gap-4 md:gap-5">
-              {revealProcess.map((item) => (
-                <div key={item.step} className="grid grid-cols-[44px_1fr] gap-4">
-                  <span className="font-[family-name:var(--font-dm-mono)] text-[13px] text-gold/80 pt-1">
-                    {item.step}
-                  </span>
-                  <div>
-                    <h4 className="text-[17px] md:text-[19px] font-semibold text-white mb-1.5">
-                      {item.title}
-                    </h4>
-                    <p className="text-[14px] md:text-[15px] text-white/62 leading-relaxed">
-                      {item.description}
-                    </p>
-                  </div>
-                </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 mb-8 md:mb-10">
+          <div className="bg-[#0e0e0e] border border-grey-border rounded-2xl p-6 md:p-8">
+            <p className="font-[family-name:var(--font-dm-mono)] text-[11px] md:text-[12px] text-gold tracking-[0.15em] uppercase mb-3">
+              FOR WHOM
+            </p>
+            <h3 className="text-[22px] md:text-[26px] font-semibold text-white leading-tight mb-5">
+              이런 분께 특히 의미가 있습니다
+            </h3>
+            <ul className="grid grid-cols-1 gap-3 md:gap-4">
+              {situations.map((item) => (
+                <li
+                  key={item}
+                  className="flex items-start gap-3 text-[14px] md:text-[15px] text-white/70 leading-relaxed"
+                >
+                  <span className="mt-2 w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0" />
+                  {item}
+                </li>
               ))}
-            </div>
+            </ul>
+          </div>
+
+          <div className="bg-[#0e0e0e] border border-grey-border rounded-2xl p-6 md:p-8">
+            <p className="font-[family-name:var(--font-dm-mono)] text-[11px] md:text-[12px] text-gold tracking-[0.15em] uppercase mb-3">
+              EXPERIENCE
+            </p>
+            <h3 className="text-[22px] md:text-[26px] font-semibold text-white leading-tight mb-5">
+              어떤 방식으로 진행되나요?
+            </h3>
+            <p className="text-[14px] md:text-[15px] text-white/62 leading-relaxed mb-4">
+              Reveal은 단순 강의보다 참여형 경험에 가깝습니다. 개인 성찰, 소그룹 대화, 코칭을 통해
+              스스로의 삶을 더 깊이 바라보도록 안내합니다.
+            </p>
+            <p className="text-[14px] md:text-[15px] text-white/62 leading-relaxed">
+              구체적인 세션의 흐름과 질문은 현장에서 직접 경험하는 것이 중요하기 때문에,
+              이 페이지에서는 세부 진행을 모두 공개하기보다 참여자가 얻게 될 변화와 방향을 중심으로 설명합니다.
+            </p>
           </div>
         </div>
 
-        <div className="bg-grey-7 border border-gold/20 rounded-2xl p-6 md:p-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 mb-8 md:mb-10">
+          <div className="bg-grey-7 border border-grey-border rounded-2xl p-6 md:p-8">
+            <p className="font-[family-name:var(--font-dm-mono)] text-[11px] md:text-[12px] text-gold tracking-[0.15em] uppercase mb-3">
+              NOT THIS
+            </p>
+            <h3 className="text-[22px] md:text-[26px] font-semibold text-white leading-tight mb-5">
+              Reveal은 이런 프로그램이 아닙니다
+            </h3>
+            <ul className="grid grid-cols-1 gap-3">
+              {notThis.map((item) => (
+                <li key={item} className="text-[14px] md:text-[15px] text-white/55 leading-relaxed">
+                  — {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="bg-grey-7 border border-gold/20 rounded-2xl p-6 md:p-8">
+            <p className="font-[family-name:var(--font-dm-mono)] text-[11px] md:text-[12px] text-gold tracking-[0.15em] uppercase mb-3">
+              INSTEAD
+            </p>
+            <h3 className="text-[22px] md:text-[26px] font-semibold text-white leading-tight mb-5">
+              대신 이런 경험에 가깝습니다
+            </h3>
+            <ul className="grid grid-cols-1 gap-3">
+              {insteadThis.map((item) => (
+                <li key={item} className="flex items-start gap-3 text-[14px] md:text-[15px] text-white/72 leading-relaxed">
+                  <span className="mt-2 w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <div className="bg-[#0e0e0e] border border-grey-border rounded-2xl p-6 md:p-8">
           <div className="grid grid-cols-1 md:grid-cols-[240px_1fr] gap-6 md:gap-8">
             <div>
               <p className="font-[family-name:var(--font-dm-mono)] text-[11px] md:text-[12px] text-gold tracking-[0.15em] uppercase mb-3">
                 WHAT YOU GET
               </p>
               <h3 className="text-[22px] md:text-[26px] font-semibold text-white leading-tight">
-                참여자가 얻는 것
+                참여자가 기대할 수 있는 변화
               </h3>
             </div>
             <ul className="grid grid-cols-1 gap-3 md:gap-4">
