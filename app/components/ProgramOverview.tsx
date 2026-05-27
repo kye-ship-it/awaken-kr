@@ -30,7 +30,7 @@ export default function ProgramOverview() {
               패턴 발견 · 믿음 점검 · 비전 정렬
             </p>
             <span className="inline-flex self-start items-center rounded-full bg-white/[0.06] border border-grey-border px-4 py-1.5 text-[12px] md:text-[13px] text-white/70 mb-5">
-              2026. 8. 8 – 10 • 서울
+              2026. 8. 7 – 9 • 서울
             </span>
             <p className="text-[14px] md:text-[15px] text-white/70 leading-relaxed mb-3">
               강의형 세미나가 아니라, 체험과 대화, 소그룹 나눔, 1:1 코칭을 통해 내가 왜 같은 방식으로 반응하고 선택하는지 직접 알아차리는 과정입니다.

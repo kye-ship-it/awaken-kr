@@ -55,7 +55,7 @@ export default function RevealSection() {
 
         {/* Date */}
         <p className="text-[14px] md:text-[16px] text-white/60 mb-6 md:mb-8">
-          2026. 8. 8(금) – 8. 10(일) • 서울
+          2026. 8. 7(금) – 8. 9(일) • 서울
         </p>
 
         {/* Gold gradient divider */}

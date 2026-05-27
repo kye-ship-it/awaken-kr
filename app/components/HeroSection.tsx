@@ -61,7 +61,7 @@ export default function HeroSection() {
           <div className="mt-6 md:mt-8 flex flex-col items-center gap-2 text-[14px] md:text-[15px] text-white/70">
             <p className="flex items-center gap-2">
               <span className="text-gold-warm">&#128197;</span>
-              <span>Reveal — 2026. 8. 8 – 10</span>
+              <span>Reveal — 2026. 8. 7 – 9</span>
             </p>
             <p className="flex items-center gap-2">
               <span className="text-gold-warm">&#128205;</span>
