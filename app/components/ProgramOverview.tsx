@@ -39,11 +39,14 @@ export default function ProgramOverview() {
               Trainer: Nathan Neighbour
             </p>
             <div className="rounded-xl border border-gold/25 bg-gold/10 px-4 py-3 mb-6">
-              <p className="text-[12px] md:text-[13px] text-white/50 line-through mb-1">
-                정가 145만원
+              <p className="text-[12px] md:text-[13px] text-white/50 mb-1">
+                현재 등록가 · 6/30까지
               </p>
               <p className="text-[17px] md:text-[19px] font-semibold text-gold-light">
-                얼리버드 95만원 <span className="text-[12px] md:text-[13px] font-normal text-white/55">5/31까지</span>
+                할인가 125만원 <span className="text-[12px] md:text-[13px] font-normal text-white/55">정가 145만원</span>
+              </p>
+              <p className="text-[12px] md:text-[13px] text-white/45 mt-2">
+                얼리버드 95만원은 5/31 종료되었습니다
               </p>
             </div>
             <ul className="flex flex-col gap-2.5 mb-8 flex-1">

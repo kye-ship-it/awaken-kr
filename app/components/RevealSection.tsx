@@ -1,7 +1,13 @@
 import Image from "next/image";
 
-const REVEAL_EARLY_BIRD_PAYMENT_URL = "https://www.payapp.kr/L/z4d9o3";
+const REVEAL_PAYMENT_URL = "https://www.payapp.kr/L/z4d9o3";
 const REVEAL_BANK_ACCOUNT = "토스뱅크 1002-4710-6716 (펀더멘탈)";
+
+const REVEAL_PRICE_TIERS = [
+  { label: "얼리버드", price: "95만원", deadline: "5/31까지", status: "종료" },
+  { label: "할인가", price: "125만원", deadline: "6/30까지", status: "현재 적용" },
+  { label: "일반가", price: "145만원", deadline: "8/5까지", status: "예정" },
+];
 
 const REVEAL_STEPS = [
   {
@@ -129,31 +135,57 @@ export default function RevealSection() {
 
         {/* Pricing */}
         <div className="bg-grey-7 border border-gold/30 rounded-2xl p-5 md:p-7 mb-8 md:mb-10 shadow-[0_0_24px_rgba(201,189,138,0.06)]">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-5 md:gap-8">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-5 md:gap-8 mb-6 md:mb-7">
             <div>
               <span className="font-[family-name:var(--font-dm-mono)] text-[11px] md:text-[12px] text-gold tracking-[0.15em] uppercase block mb-3">
-                EARLY BIRD
+                REGISTRATION PRICE
               </span>
               <h3 className="text-[22px] md:text-[26px] font-semibold text-white mb-2">
-                Reveal 얼리버드 등록
+                Reveal 등록가 안내
               </h3>
               <p className="text-[13px] md:text-[14px] text-white/55 leading-relaxed">
-                2026년 5월 31일까지 얼리버드 혜택이 적용됩니다.
-                PayApp 결제 또는 계좌이체로 등록할 수 있습니다.
+                현재 PayApp 결제 링크에는 6월 30일까지 적용되는 할인가가 반영되어 있습니다.
+                이후에는 일반가로 전환됩니다.
               </p>
             </div>
 
             <div className="md:text-right">
-              <p className="text-[13px] md:text-[14px] text-white/45 line-through mb-1">
-                정가 145만원
+              <p className="text-[13px] md:text-[14px] text-white/45 mb-1">
+                현재 적용가 · 6/30까지
               </p>
               <p className="text-[30px] md:text-[36px] font-semibold text-gold-light leading-none">
-                95만원
+                125만원
               </p>
               <p className="text-[12px] md:text-[13px] text-white/45 mt-2">
-                5/31까지
+                정가 145만원
               </p>
             </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
+            {REVEAL_PRICE_TIERS.map((tier) => (
+              <div
+                key={tier.label}
+                className={`rounded-xl border px-4 py-3 ${
+                  tier.status === "현재 적용"
+                    ? "border-gold/40 bg-gold/10"
+                    : "border-white/10 bg-black/20"
+                }`}
+              >
+                <div className="flex items-center justify-between gap-2 mb-2">
+                  <span className="font-[family-name:var(--font-dm-mono)] text-[11px] text-gold tracking-[0.12em] uppercase">
+                    {tier.label}
+                  </span>
+                  <span className="text-[11px] text-white/40">{tier.status}</span>
+                </div>
+                <p className="text-[18px] md:text-[20px] font-semibold text-white">
+                  {tier.price}
+                </p>
+                <p className="text-[12px] md:text-[13px] text-white/45 mt-1">
+                  {tier.deadline}
+                </p>
+              </div>
+            ))}
           </div>
 
           <div className="mt-5 md:mt-6 pt-5 md:pt-6 border-t border-white/10">
@@ -213,12 +245,12 @@ export default function RevealSection() {
         {/* CTA */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 text-center">
           <a
-            href={REVEAL_EARLY_BIRD_PAYMENT_URL}
+            href={REVEAL_PAYMENT_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center rounded-full bg-gold text-black px-8 py-3 text-[15px] md:text-[16px] font-medium transition-opacity hover:opacity-90"
           >
-            얼리버드 95만원 결제하기
+            할인가 125만원 결제하기
           </a>
           <a
             href="#cta-form"
