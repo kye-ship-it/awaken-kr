@@ -207,20 +207,25 @@ export default function CTAForm() {
             </p>
           </div>
 
+          <div className="rounded-xl border border-gold/35 bg-gold/10 px-4 py-3 text-[13px] md:text-[14px] text-gold-light leading-relaxed">
+            Reveal 관련 상세 안내 코스는 이메일과 SMS로 순차 발송됩니다.
+            아래 동의 항목을 체크해 주셔야 자료와 후속 안내를 정상적으로 받아보실 수 있습니다.
+          </div>
+
           <div className="flex flex-col gap-3">
             <ConsentCheckbox
               id="privacy-consent"
               checked={formData.privacyConsent}
               onChange={handleConsentChange("privacyConsent")}
-              label="[필수] 개인정보 수집 및 이용에 동의합니다."
+              label="[필수] Reveal 안내 신청을 위한 개인정보 수집 및 이용에 동의합니다."
               detail="수집 항목: 이름, 연락처, 이메일, 추천인. 이용 목적: Reveal 안내 및 신청 관리. 보유 기간: 프로그램 종료 후 1년 또는 동의 철회 시까지. 동의를 거부할 수 있으나, 미동의 시 안내 신청이 제한됩니다."
             />
             <ConsentCheckbox
               id="marketing-consent"
               checked={formData.marketingConsent}
               onChange={handleConsentChange("marketingConsent")}
-              label="[선택] 이메일/SMS를 통한 Reveal 및 GAP Community 관련 안내 수신에 동의합니다."
-              detail="수신 항목: Reveal 안내 코스, 프로그램 일정, 후속 안내, 관련 커뮤니티 소식. 수신 방법: 이메일, 문자메시지. 보유 기간: 동의 철회 시까지. 동의하지 않아도 기본 안내 신청은 가능합니다."
+              label="[선택] Reveal 상세 안내 코스와 후속 안내를 이메일/SMS로 받는 데 동의합니다."
+              detail="수신 항목: Reveal 안내 코스, 프로그램 일정, 후속 안내, 관련 커뮤니티 소식. 수신 방법: 이메일, 문자메시지. 보유 기간: 동의 철회 시까지. 동의하지 않아도 기본 안내 신청은 가능하지만, 상세 안내 코스와 후속 안내 수신은 제한될 수 있습니다."
             />
           </div>
 
