@@ -111,6 +111,7 @@ export default function CTAForm() {
 
       await fetch(ZAPIER_WEBHOOK_URL, {
         method: "POST",
+        mode: "no-cors",
         body: JSON.stringify(payload),
       });
       window.location.href = "/thank-you";
