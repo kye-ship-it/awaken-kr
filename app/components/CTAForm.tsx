@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 
+const ZAPIER_WEBHOOK_URL = "https://hooks.zapier.com/hooks/catch/11286016/43zeoru/";
+const CONSENT_VERSION = "reveal-lead-consent-2026-06-16";
 
 function generateId(name: string, phone: string): string {
   const input = `${name}:${phone}`;
@@ -17,6 +19,31 @@ const programOptions = [
   { value: "reveal", label: "Reveal" },
 ];
 
+function normalizePhone(phone: string): string {
+  return phone.replace(/[^\d+]/g, "");
+}
+
+function getTrackingParams() {
+  if (typeof window === "undefined") {
+    return {
+      utm_source: "",
+      utm_medium: "",
+      utm_campaign: "",
+      utm_content: "",
+      utm_term: "",
+    };
+  }
+
+  const params = new URLSearchParams(window.location.search);
+  return {
+    utm_source: params.get("utm_source") ?? "",
+    utm_medium: params.get("utm_medium") ?? "",
+    utm_campaign: params.get("utm_campaign") ?? "",
+    utm_content: params.get("utm_content") ?? "",
+    utm_term: params.get("utm_term") ?? "",
+  };
+}
+
 export default function CTAForm() {
   const [formData, setFormData] = useState({
     program: "reveal",
@@ -24,12 +51,19 @@ export default function CTAForm() {
     phone: "",
     email: "",
     referrer: "",
+    privacyConsent: false,
+    marketingConsent: false,
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+  const [formError, setFormError] = useState("");
 
   const handleChange = (field: "name" | "phone" | "email" | "referrer") => (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData((prev) => ({ ...prev, [field]: e.target.value }));
+  };
+
+  const handleConsentChange = (field: "privacyConsent" | "marketingConsent") => (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData((prev) => ({ ...prev, [field]: e.target.checked }));
   };
 
   const handleProgramSelect = (value: string) => {
@@ -38,16 +72,49 @@ export default function CTAForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.name || !formData.phone || !formData.email) return;
+
+    const name = formData.name.trim();
+    const phone = normalizePhone(formData.phone);
+    const email = formData.email.trim().toLowerCase();
+    const referrer = formData.referrer.trim();
+
+    if (!name || !phone || !email) {
+      setFormError("이름, 연락처, 이메일을 입력해 주세요.");
+      return;
+    }
+
+    if (!formData.privacyConsent) {
+      setFormError("개인정보 수집 및 이용 동의가 필요합니다.");
+      return;
+    }
 
     setIsSubmitting(true);
     setSubmitStatus("idle");
+    setFormError("");
     try {
-      const id = generateId(formData.name, formData.phone);
       const timestamp = new Date().toISOString();
-      await fetch("https://hooks.zapier.com/hooks/catch/14332708/ug158id/", {
+      const payload = {
+        lead_id: generateId(name, phone),
+        submitted_at: timestamp,
+        program: formData.program,
+        name,
+        phone,
+        email,
+        referrer,
+        source: "reveal-lp",
+        ...getTrackingParams(),
+        privacy_consent: formData.privacyConsent,
+        marketing_consent: formData.marketingConsent,
+        consent_timestamp: timestamp,
+        consent_version: CONSENT_VERSION,
+      };
+
+      await fetch(ZAPIER_WEBHOOK_URL, {
         method: "POST",
-        body: JSON.stringify({ ...formData, id, timestamp }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
       });
       window.location.href = "/thank-you";
     } catch {
@@ -142,6 +209,29 @@ export default function CTAForm() {
             </p>
           </div>
 
+          <div className="flex flex-col gap-3">
+            <ConsentCheckbox
+              id="privacy-consent"
+              checked={formData.privacyConsent}
+              onChange={handleConsentChange("privacyConsent")}
+              label="[필수] 개인정보 수집 및 이용에 동의합니다."
+              detail="수집 항목: 이름, 연락처, 이메일, 추천인. 이용 목적: Reveal 안내 및 신청 관리. 보유 기간: 프로그램 종료 후 1년 또는 동의 철회 시까지. 동의를 거부할 수 있으나, 미동의 시 안내 신청이 제한됩니다."
+            />
+            <ConsentCheckbox
+              id="marketing-consent"
+              checked={formData.marketingConsent}
+              onChange={handleConsentChange("marketingConsent")}
+              label="[선택] 이메일/SMS를 통한 Reveal 및 GAP Community 관련 안내 수신에 동의합니다."
+              detail="수신 항목: Reveal 안내 코스, 프로그램 일정, 후속 안내, 관련 커뮤니티 소식. 수신 방법: 이메일, 문자메시지. 보유 기간: 동의 철회 시까지. 동의하지 않아도 기본 안내 신청은 가능합니다."
+            />
+          </div>
+
+          {formError && (
+            <p className="text-center text-red-400 text-[14px]">
+              {formError}
+            </p>
+          )}
+
           <button
             type="submit"
             disabled={isSubmitting}
@@ -158,6 +248,41 @@ export default function CTAForm() {
         </form>
       </div>
     </section>
+  );
+}
+
+function ConsentCheckbox({
+  id,
+  checked,
+  onChange,
+  label,
+  detail,
+}: {
+  id: string;
+  checked: boolean;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  label: string;
+  detail: string;
+}) {
+  return (
+    <div className="rounded-xl border border-grey-border bg-grey-dark/50 px-3 py-3">
+      <label htmlFor={id} className="flex items-start gap-3 text-[13px] md:text-[14px] text-grey-light-9 cursor-pointer">
+        <input
+          id={id}
+          type="checkbox"
+          checked={checked}
+          onChange={onChange}
+          className="mt-0.5 h-4 w-4 shrink-0 accent-gold"
+        />
+        <span className="leading-relaxed">{label}</span>
+      </label>
+      <details className="ml-7 mt-2 text-[12px] md:text-[13px] text-grey-light-8">
+        <summary className="cursor-pointer text-white/45 hover:text-white/65">
+          자세히 보기
+        </summary>
+        <p className="mt-2 leading-relaxed">{detail}</p>
+      </details>
+    </div>
   );
 }
 
