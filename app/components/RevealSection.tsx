@@ -4,8 +4,7 @@ const REVEAL_PAYMENT_URL = "https://www.payapp.kr/L/z4d9o3";
 const REVEAL_BANK_ACCOUNT = "토스뱅크 1002-4710-6716 (펀더멘탈)";
 
 const REVEAL_PRICE_TIERS = [
-  { label: "얼리버드", price: "95만원", deadline: "5/31까지", status: "종료" },
-  { label: "할인가", price: "125만원", deadline: "6/30까지", status: "현재 적용" },
+  { label: "현재 등록가", price: "125만원", deadline: "6/30까지", status: "현재 적용" },
   { label: "일반가", price: "145만원", deadline: "8/5까지", status: "예정" },
 ];
 
@@ -144,7 +143,7 @@ export default function RevealSection() {
                 Reveal 등록가 안내
               </h3>
               <p className="text-[13px] md:text-[14px] text-white/55 leading-relaxed">
-                현재 PayApp 결제 링크에는 6월 30일까지 적용되는 할인가가 반영되어 있습니다.
+                현재 PayApp 결제 링크에는 6월 30일까지 적용되는 등록가가 반영되어 있습니다.
                 이후에는 일반가로 전환됩니다.
               </p>
             </div>
@@ -162,7 +161,7 @@ export default function RevealSection() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
             {REVEAL_PRICE_TIERS.map((tier) => (
               <div
                 key={tier.label}

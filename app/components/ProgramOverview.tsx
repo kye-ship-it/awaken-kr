@@ -43,10 +43,7 @@ export default function ProgramOverview() {
                 현재 등록가 · 6/30까지
               </p>
               <p className="text-[17px] md:text-[19px] font-semibold text-gold-light">
-                할인가 125만원 <span className="text-[12px] md:text-[13px] font-normal text-white/55">정가 145만원</span>
-              </p>
-              <p className="text-[12px] md:text-[13px] text-white/45 mt-2">
-                얼리버드 95만원은 5/31 종료되었습니다
+                등록가 125만원 <span className="text-[12px] md:text-[13px] font-normal text-white/55">이후 일반가 145만원</span>
               </p>
             </div>
             <ul className="flex flex-col gap-2.5 mb-8 flex-1">
