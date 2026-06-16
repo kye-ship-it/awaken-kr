@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/reveal-og.jpg",
+        url: "/images/reveal-og-20260616.jpg",
         width: 1200,
         height: 630,
         alt: "GAP Community Korea Reveal",
