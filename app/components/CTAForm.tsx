@@ -88,6 +88,15 @@ export default function CTAForm() {
       return;
     }
 
+    if (
+      !formData.marketingConsent &&
+      !window.confirm(
+        "마케팅 정보 수신에 동의하지 않으면 Reveal 상세 안내 코스, 모집 일정, 혜택 및 후속 안내를 이메일/SMS로 받을 수 없습니다.\n\n그래도 신청하시겠습니까?"
+      )
+    ) {
+      return;
+    }
+
     setIsSubmitting(true);
     setSubmitStatus("idle");
     setFormError("");
@@ -208,8 +217,8 @@ export default function CTAForm() {
           </div>
 
           <div className="rounded-xl border border-gold/35 bg-gold/10 px-4 py-3 text-[13px] md:text-[14px] text-gold-light leading-relaxed">
-            Reveal 관련 상세 안내 코스는 이메일과 SMS로 순차 발송됩니다.
-            아래 동의 항목을 체크해 주셔야 자료와 후속 안내를 정상적으로 받아보실 수 있습니다.
+            Reveal 상세 안내 코스는 이메일과 SMS로 순차 발송됩니다.
+            아래 [마케팅 정보 수신 동의]를 체크해야 안내 자료, 모집 일정, 혜택 및 후속 안내를 정상적으로 받아보실 수 있습니다.
           </div>
 
           <div className="flex flex-col gap-3">
@@ -224,8 +233,10 @@ export default function CTAForm() {
               id="marketing-consent"
               checked={formData.marketingConsent}
               onChange={handleConsentChange("marketingConsent")}
-              label="[선택] Reveal 상세 안내 코스와 후속 안내를 이메일/SMS로 받는 데 동의합니다."
-              detail="수신 항목: Reveal 안내 코스, 프로그램 일정, 후속 안내, 관련 커뮤니티 소식. 수신 방법: 이메일, 문자메시지. 보유 기간: 동의 철회 시까지. 동의하지 않아도 기본 안내 신청은 가능하지만, 상세 안내 코스와 후속 안내 수신은 제한될 수 있습니다."
+              label="[선택] 마케팅 정보 수신 동의: Reveal 상세 안내 코스, 모집 일정, 혜택 및 후속 안내를 이메일/SMS로 받는 데 동의합니다."
+              detail="수신 항목: Reveal 안내 코스, 프로그램 일정, 혜택, 후속 안내, 관련 커뮤니티 소식. 수신 방법: 이메일, 문자메시지. 보유 기간: 동의 철회 시까지. 동의하지 않아도 기본 신청은 가능하지만, Reveal 상세 안내 코스와 후속 안내는 이메일/SMS로 발송되지 않습니다."
+              badge="안내 코스 수신에 필요"
+              note="동의하지 않아도 신청은 가능하지만, Reveal 상세 안내 코스와 후속 안내는 이메일/SMS로 발송되지 않습니다."
             />
           </div>
 
@@ -260,12 +271,16 @@ function ConsentCheckbox({
   onChange,
   label,
   detail,
+  badge,
+  note,
 }: {
   id: string;
   checked: boolean;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   label: string;
   detail: string;
+  badge?: string;
+  note?: string;
 }) {
   return (
     <div className="rounded-xl border border-grey-border bg-grey-dark/50 px-3 py-3">
@@ -277,8 +292,20 @@ function ConsentCheckbox({
           onChange={onChange}
           className="mt-0.5 h-4 w-4 shrink-0 accent-gold"
         />
-        <span className="leading-relaxed">{label}</span>
+        <span className="flex flex-col gap-1 leading-relaxed">
+          <span>{label}</span>
+          {badge && (
+            <span className="w-fit rounded-full border border-gold/35 bg-gold/10 px-2 py-0.5 text-[11px] font-medium text-gold-light">
+              {badge}
+            </span>
+          )}
+        </span>
       </label>
+      {note && (
+        <p className="ml-7 mt-2 text-[12px] md:text-[13px] text-gold-light leading-relaxed">
+          {note}
+        </p>
+      )}
       <details className="ml-7 mt-2 text-[12px] md:text-[13px] text-grey-light-8">
         <summary className="cursor-pointer text-white/45 hover:text-white/65">
           자세히 보기
