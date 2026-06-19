@@ -19,7 +19,7 @@ const REVEAL_STEPS = [
     label: "REFRAME",
     title: "믿음과 태도 점검",
     description:
-      "그 반응 아래에 있던 오래된 믿음, 두려움, 자기 해석을 새롭게 바라봅니다.",
+      "그 반응 아래에 있던 무의식 속 신념, 두려움, 자기 해석을 새롭게 바라봅니다.",
   },
   {
     label: "ALIGN",
