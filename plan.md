@@ -78,6 +78,24 @@
 - 검증 로그
 - PR 링크
 
+## 운영 변경 로그
+
+### 2026-07-02 21:43 KST - 145만원 결제 링크 SMS 플로우 적용 및 검증
+- 운영 가격 기준을 `145만원 / 8월 5일까지`로 변경하고 production URL `<https://awaken-kr.vercel.app/>` 기준으로 반영 확인.
+- 기존 LP에 남아 있던 정적 PayApp 링크 `payapp.kr/L/z4d9o3`가 125만원 결제로 연결되는 문제를 발견해 제거함.
+- 등록 CTA는 정적 결제 링크가 아니라 신청폼 `#cta-form`으로 이동하게 정리함.
+- Zapier `Reveal Nurturing Sequence`는 live v14 기준으로 운영됨.
+- PayApp 생성 요청값은 `goodname=리빌 서울`, `price=1450000`으로 확인.
+- 새 SMS step `Send Reveal Payment Link SMS`를 PayApp 링크 생성/Sheet 기록 직후, 마케팅 동의 필터 전에 추가함.
+- 최종 흐름: `신청 → PayApp 링크 생성 → Sheet 기록 → 결제 링크 SMS 발송 → 마케팅 동의 필터 → Kit/안내 코스/후속 SMS·이메일`.
+- 의사결정: Kit 이메일/시퀀스는 수정하지 않음. 바로 결제 니즈는 신청자별 PayApp 링크 SMS로 해결.
+- LP/thank-you 문구는 “신청서를 제출하면 개인 결제 링크를 문자로 바로 보내드립니다” 흐름으로 보강함.
+- 실제 테스트 번호 `01050414079`로 마케팅 동의 OFF/ON 2건을 공식 LP에서 제출함.
+- OFF 테스트: `chriskimjj+reveal-test-off-20260702t121@gmail.com`, PayApp 링크 `<https://www.payapp.kr/z7Tp3L6>`, Sheet row 30 저장 후 마케팅 필터에서 정상 차단.
+- ON 테스트: `chriskimjj+reveal-test-on-20260702t121@gmail.com`, PayApp 링크 `<https://www.payapp.kr/z7Tp3RB>`, Sheet row 31 저장 후 Kit 진입 및 기존 Day 0 안내 SMS 성공.
+- 두 테스트 모두 `/thank-you` 도착, 개인 PayApp 링크 SMS 수신 완료, PayApp 페이지에서 `145만원` 확인, `125만원` 없음 확인.
+- 검증: Zap v14 ON / draft 없음, SMS step이 마케팅 필터보다 앞에 위치, `npm run build` 통과, GitHub `main` push 완료.
+
 ## 미결정/확인 필요
 - 최종 CTA 우선순위: “문의/안내 코스” vs “얼리버드 결제”
 - Reveal 실제 모집 마감/얼리버드 날짜 유지 여부: 현재 2026년 5월 31일
