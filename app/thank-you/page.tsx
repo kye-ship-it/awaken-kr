@@ -43,7 +43,7 @@ export default function ThankYouPage() {
         신청이 완료되었습니다.
       </h1>
       <p className="text-[16px] md:text-[18px] text-white/70 leading-relaxed whitespace-pre-line">
-        {"제출해주신 연락처와 이메일로\n안내가 나갈 예정입니다."}
+        {"입력하신 연락처로 개인 결제 링크를 보내드렸습니다.\n안내 코스는 동의하신 분께 이메일/SMS로 순차 발송됩니다."}
       </p>
       <p className="text-[20px] md:text-[22px] font-medium text-gold-light mt-6">
         감사합니다.

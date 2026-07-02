@@ -141,7 +141,7 @@ export default function RevealSection() {
                 Reveal 등록가 안내
               </h3>
               <p className="text-[13px] md:text-[14px] text-white/55 leading-relaxed">
-                신청서를 제출하면 8월 5일까지 적용되는 등록가가 반영된 개인별 PayApp 결제 링크를 안내드립니다.
+                신청서를 제출하면 8월 5일까지 적용되는 등록가가 반영된 개인별 PayApp 결제 링크를 문자로 바로 보내드립니다.
               </p>
             </div>
 
