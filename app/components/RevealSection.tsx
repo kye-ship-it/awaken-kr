@@ -1,6 +1,5 @@
 import Image from "next/image";
 
-const REVEAL_PAYMENT_URL = "https://www.payapp.kr/L/z4d9o3";
 const REVEAL_BANK_ACCOUNT = "토스뱅크 1002-4710-6716 (펀더멘탈)";
 
 const REVEAL_PRICE_TIERS = [
@@ -142,7 +141,7 @@ export default function RevealSection() {
                 Reveal 등록가 안내
               </h3>
               <p className="text-[13px] md:text-[14px] text-white/55 leading-relaxed">
-                현재 PayApp 결제 링크에는 8월 5일까지 적용되는 등록가가 반영되어 있습니다.
+                신청서를 제출하면 8월 5일까지 적용되는 등록가가 반영된 개인별 PayApp 결제 링크를 안내드립니다.
               </p>
             </div>
 
@@ -239,12 +238,10 @@ export default function RevealSection() {
         {/* CTA */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 text-center">
           <a
-            href={REVEAL_PAYMENT_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#cta-form"
             className="inline-flex items-center justify-center rounded-full bg-gold text-black px-8 py-3 text-[15px] md:text-[16px] font-medium transition-opacity hover:opacity-90"
           >
-            Reveal 등록 진행하기
+            신청서 작성하고 결제 링크 받기
           </a>
           <a
             href="#cta-form"
