@@ -40,10 +40,10 @@ export default function ProgramOverview() {
             </p>
             <div className="rounded-xl border border-gold/25 bg-gold/10 px-4 py-3 mb-6">
               <p className="text-[12px] md:text-[13px] text-white/50 mb-1">
-                현재 등록가 · 6/30까지
+                현재 등록가 · 8/5까지
               </p>
               <p className="text-[17px] md:text-[19px] font-semibold text-gold-light">
-                등록가 125만원 <span className="text-[12px] md:text-[13px] font-normal text-white/55">이후 일반가 145만원</span>
+                등록가 145만원
               </p>
             </div>
             <ul className="flex flex-col gap-2.5 mb-8 flex-1">

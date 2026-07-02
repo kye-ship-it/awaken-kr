@@ -4,8 +4,7 @@ const REVEAL_PAYMENT_URL = "https://www.payapp.kr/L/z4d9o3";
 const REVEAL_BANK_ACCOUNT = "토스뱅크 1002-4710-6716 (펀더멘탈)";
 
 const REVEAL_PRICE_TIERS = [
-  { label: "현재 등록가", price: "125만원", deadline: "6/30까지", status: "현재 적용" },
-  { label: "일반가", price: "145만원", deadline: "8/5까지", status: "예정" },
+  { label: "현재 등록가", price: "145만원", deadline: "8/5까지", status: "현재 적용" },
 ];
 
 const REVEAL_STEPS = [
@@ -143,20 +142,16 @@ export default function RevealSection() {
                 Reveal 등록가 안내
               </h3>
               <p className="text-[13px] md:text-[14px] text-white/55 leading-relaxed">
-                현재 PayApp 결제 링크에는 6월 30일까지 적용되는 등록가가 반영되어 있습니다.
-                이후에는 일반가로 전환됩니다.
+                현재 PayApp 결제 링크에는 8월 5일까지 적용되는 등록가가 반영되어 있습니다.
               </p>
             </div>
 
             <div className="md:text-right">
               <p className="text-[13px] md:text-[14px] text-white/45 mb-1">
-                현재 적용가 · 6/30까지
+                현재 등록가 · 8/5까지
               </p>
               <p className="text-[30px] md:text-[36px] font-semibold text-gold-light leading-none">
-                125만원
-              </p>
-              <p className="text-[12px] md:text-[13px] text-white/45 mt-2">
-                정가 145만원
+                145만원
               </p>
             </div>
           </div>
@@ -249,7 +244,7 @@ export default function RevealSection() {
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center rounded-full bg-gold text-black px-8 py-3 text-[15px] md:text-[16px] font-medium transition-opacity hover:opacity-90"
           >
-            할인가 125만원 결제하기
+            Reveal 등록 진행하기
           </a>
           <a
             href="#cta-form"
