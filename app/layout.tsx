@@ -25,22 +25,21 @@ const prata = Prata({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://awaken-kr.vercel.app"),
-  title: "GAP Community Korea | Reveal",
+  title: "Awaken Korea | 어웨이큰",
   description:
-    "GAP Community Korea가 준비한 2026년 8월 Reveal 프로그램으로 진정한 내면의 변화를 경험하세요.",
+    "지인에게 Awaken을 추천 받으셨나요? 말로는 다 설명되지 않는 4일간의 경험, 도대체 무엇이 사람을 변화시키는지 궁금하다면.",
   openGraph: {
-    title: "GAP Community Korea | Reveal",
+    title: "Awaken Korea | 어웨이큰",
     description:
-      "GAP Community Korea가 준비한 2026년 8월 Reveal 프로그램으로 진정한 내면의 변화를 경험하세요.",
+      "말로는 다 설명되지 않는 4일간의 경험, 도대체 무엇이 사람을 변화시키는지 궁금하다면.",
     locale: "ko_KR",
     type: "website",
     images: [
       {
-        url: "/images/reveal-og-20260616.jpg",
+        url: "/images/awaken-kr-og.jpg",
         width: 1200,
         height: 630,
-        alt: "GAP Community Korea Reveal",
+        alt: "Awaken 어웨이큰",
       },
     ],
   },
